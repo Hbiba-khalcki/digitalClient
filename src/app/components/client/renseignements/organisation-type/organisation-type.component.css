@@ -1,0 +1,40 @@
+::ng-deep .full-width-page {
+  background-color: #f2f2f2 !important;
+  padding: 50px;
+  padding: 50px;
+  min-height: calc(100vh - 100px);
+}
+.bloc {
+  padding: 48px;
+  background-color: white;
+  border-radius: 11px;
+  margin: 70px 120px;
+}
+.img {
+  width: 120px;
+  height: 120px;
+  margin: 20px 20px;
+  padding: 30px 30px;
+}
+
+.imgbloc {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+.btnbloc {
+  text-align: center;
+  margin-top: -85px;
+  position: relative;
+}
+.btn-gray {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  .bloc {
+    margin: 70px 0px !important;
+  }
+}

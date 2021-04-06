@@ -1,0 +1,59 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/inscritm.png"  class="mh-100" alt="">
+        <p class="titre text-bold"> Evaluation de votre maturite numerique </p>
+        <p class="text-bold"> Avant de commencer votre evaluation, <br>
+            veuillez fournir les informations requises <br>
+            pour creer votre compte personnel.</p>
+    </div>
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+
+            <div>
+                <p>
+                    Nous vous suggerons de saisir vos informations pour: <br>
+                    * Recevrez vous recommandations et actions a entreprendre,<br>
+                    * Recevez votre rapport detaille,<br>
+                    * Reprenez la saisie de vos reponses en cas d'intrerruption. <br>
+                </p> 
+
+                <div class="example-container" fxLayout="column">
+                    <form>
+                    <mat-form-field>
+                        <mat-label>Nom:</mat-label>
+                        <input matInput placeholder="pat@example.com" required>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Prenom:</mat-label>
+                        <input placeholder="Just a placeholder" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Email:</mat-label>
+                        <input placeholder="Just a placeholder" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Nom de l'entreprse:</mat-label>
+                        <input placeholder="Just a placeholder" required>
+                    </mat-form-field>
+                </form>
+                </div>
+
+
+                <p> abonnez-vous a notre newsletter numerique <br>
+                    Obtenez des articles sur les numerisation et la gestion des <br>
+                    processus. Pas de partage de votre email, désabonnez-vous a <br>
+                    tout moment.
+                 </p>
+
+                <div class="btn-center">
+                    <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
+                    <button mat-raised-button color="primary" routerLink="/"> Suivant </button>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+
+</div>
