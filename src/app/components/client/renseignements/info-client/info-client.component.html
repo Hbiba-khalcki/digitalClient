@@ -16,22 +16,28 @@
                     * Recevez votre rapport detaille,<br>
                     * Reprenez la saisie de vos reponses en cas d'intrerruption. <br>
                 </p> 
-
+                <form class="example-form">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Textarea</mat-label>
+                        <textarea matInput></textarea>
+                      </mat-form-field>
+                     
+                  </form>
                 <div class="example-container" fxLayout="column">
                     <form>
                     <mat-form-field>
                         <mat-label>Nom:</mat-label>
                         <input matInput placeholder="pat@example.com" required>
-                    </mat-form-field>
+                    </mat-form-field> <br>
 
                     <mat-form-field>
                         <mat-label>Prenom:</mat-label>
                         <input placeholder="Just a placeholder" required>
-                    </mat-form-field>
+                    </mat-form-field><br>
                     <mat-form-field>
                         <mat-label>Email:</mat-label>
                         <input placeholder="Just a placeholder" required>
-                    </mat-form-field>
+                    </mat-form-field><br>
                     <mat-form-field>
                         <mat-label>Nom de l'entreprse:</mat-label>
                         <input placeholder="Just a placeholder" required>
@@ -48,7 +54,7 @@
 
                 <div class="btn-center">
                     <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
-                    <button mat-raised-button color="primary" routerLink="/"> Suivant </button>
+                    <button mat-raised-button color="primary" routerLink="/sectionOne"> Suivant </button>
                 </div>
 
             </div>
