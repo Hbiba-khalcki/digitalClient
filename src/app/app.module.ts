@@ -20,12 +20,16 @@ import {MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FirstComponentComponent } from './components/client/strategie-leadership/first-component/first-component.component';
+import { InfraInfoComponent } from './components/client/infrastructure-informatique/infra-info/infra-info.component';
+import { TechServiceComponent } from './components/client/technologies-services/tech-service/tech-service.component';
+import { CultInnovComponent } from './components/client/culture-innovation/cult-innov/cult-innov.component';
+import { OprerationProcComponent } from './components/client/operation-processus/opreration-proc/opreration-proc.component';
 @NgModule({
   declarations: [
     AppComponent, 
     NavBarComponent, 
     HomeComponent, 
-    OrganisationTypeComponent, InfoClientComponent, FirstComponentComponent
+    OrganisationTypeComponent, InfoClientComponent, FirstComponentComponent, InfraInfoComponent, TechServiceComponent, CultInnovComponent, OprerationProcComponent
   ],
   imports: [
     BrowserModule,

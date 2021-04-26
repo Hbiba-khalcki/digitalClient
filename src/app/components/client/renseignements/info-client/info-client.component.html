@@ -16,34 +16,22 @@
                     * Recevez votre rapport detaille,<br>
                     * Reprenez la saisie de vos reponses en cas d'intrerruption. <br>
                 </p> 
-                <form class="example-form">
-                    <mat-form-field appearance="fill">
-                        <mat-label>Textarea</mat-label>
-                        <textarea matInput></textarea>
-                      </mat-form-field>
-                     
-                  </form>
-                <div class="example-container" fxLayout="column">
-                    <form>
+                <div class="form-container">
                     <mat-form-field>
-                        <mat-label>Nom:</mat-label>
-                        <input matInput placeholder="pat@example.com" required>
-                    </mat-form-field> <br>
-
-                    <mat-form-field>
-                        <mat-label>Prenom:</mat-label>
-                        <input placeholder="Just a placeholder" required>
-                    </mat-form-field><br>
-                    <mat-form-field>
-                        <mat-label>Email:</mat-label>
-                        <input placeholder="Just a placeholder" required>
-                    </mat-form-field><br>
-                    <mat-form-field>
-                        <mat-label>Nom de l'entreprse:</mat-label>
-                        <input placeholder="Just a placeholder" required>
+                      <mat-label>Prenom</mat-label>
+                      <input matInput type="text">
                     </mat-form-field>
-                </form>
-                </div>
+                    <br>
+                    <mat-form-field>
+                      <mat-label>Email</mat-label>
+                      <input matInput type="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                      <mat-label>Nom de l'entreprse</mat-label>
+                      <input matInput type="text">
+                    </mat-form-field>
+                  </div>
 
 
                 <p> abonnez-vous a notre newsletter numerique <br>
@@ -53,7 +41,7 @@
                  </p>
 
                 <div class="btn-center">
-                    <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
+                    <button mat-button class="btn-gray" routerLink="/typeorganisation"> Précédent </button>
                     <button mat-raised-button color="primary" routerLink="/sectionOne"> Suivant </button>
                 </div>
 

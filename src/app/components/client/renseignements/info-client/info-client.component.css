@@ -23,3 +23,9 @@
   .mh-100{
     max-width: 100%;
   }
+  .form-container{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+ 
