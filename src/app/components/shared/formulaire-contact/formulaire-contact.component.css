@@ -1,0 +1,42 @@
+::ng-deep app-formulaire-contact{
+    display: block !important;
+      
+}
+.card{
+    position: absolute;
+    top: 80px;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+.my-label{
+    color: #9A8E8E;
+} 
+.my-button
+{
+    top: 30px;
+    left: 40px;
+}
+mat-form-field{
+    width: 550px;
+    height: 50px;
+    margin: 20px;
+}
+mat-icon{
+    color: #9A8E8E;
+    
+}
+.aucun
+{
+    color: #000000;
+    width : 50 px;   
+}
+.Mat-Msg
+{
+    margin-top: 35px;
+    width: 1140px;
+}
+
+

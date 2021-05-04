@@ -35,4 +35,5 @@ button{
   }
 .navbar{
     background-color: #888585 !important;
+    border-bottom: 1px solid #08c;
   }

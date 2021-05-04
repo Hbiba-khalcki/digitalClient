@@ -1,0 +1,76 @@
+<div>
+    <mat-card class="card">
+        <div fxLayout="row" fxLayoutAlign=" none">
+            <mat-icon class="aucun">mail_outline</mat-icon>
+            <h1> <h2> Formulaire </h2> de contact.</h1>
+        </div>
+        <form class="form">
+            <div fxLayout="row" fxLayoutAlign="stretch">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <br>
+                        <mat-label class="my-label">Nom et Prénom :</mat-label>
+                        <br>
+                        <div div fxLayout="row" fxLayoutAlign="space-between none">
+                            <input matInput placeholder="Nom et Prénom" type="text" required>
+                            <mat-icon>perm_identity</mat-icon>
+                        </div>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <br>
+                        <mat-label class="my-label">Entreprise :</mat-label>
+                        <br>
+                        <div div fxLayout="row" fxLayoutAlign="space-between none">
+                            <input matInput placeholder="Entreprise" name="entreprise" required>
+                            <mat-icon> business</mat-icon>
+                        </div>
+                    </mat-form-field>
+                </p>
+
+            </div>
+            <br>
+            <div div fxLayout="row" fxLayoutAlign="stretch">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <br>
+                        <mat-label class="my-label">Téléphone :</mat-label>
+                        <br>
+                        <div div fxLayout="row" fxLayoutAlign="space-between none">
+                            <input matInput placeholder="Téléphone" name="tel" required>
+                            <mat-icon> call</mat-icon>
+                        </div>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <br>
+                        <mat-label class="my-label">Email :</mat-label>
+                        <br>
+                        <div div fxLayout="row" fxLayoutAlign="space-between none">
+                            <input matInput placeholder="Email" name="email" required>
+                            <mat-icon> mail_outline</mat-icon>
+                        </div>
+                    </mat-form-field>
+                </p>
+            </div>
+            <p>
+                <mat-form-field appearance="outline" class="Mat-Msg">
+                    <br>
+                    <mat-label class="my-label">Votre demande :</mat-label>
+                    <br>
+                    <div div fxLayout="row" fxLayoutAlign="space-between none">
+                        <input matInput placeholder="message" name="msg" required>
+                        <mat-icon> chat_bubble_outline</mat-icon>
+                    </div>
+                </mat-form-field>
+            </p>
+
+            <button class="my-button" mat-raised-button color="primary" routerLink="">Envoyer</button>
+        </form>
+
+    </mat-card>
+</div>

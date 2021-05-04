@@ -1,0 +1,47 @@
+::ng-deep app-apropos{
+    display: block !important;
+    padding: 20px;  
+}
+.card{
+    position: absolute;
+    top: 80px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #F2F2F2;
+    overflow: auto;
+}
+.cardtext{
+    padding-left: 23px;
+    padding-top: 10px;
+    height: 20px;
+    width: 600px;
+    text-align: center;
+    font-size : 15px ;
+}
+.cardParag{
+    overflow: auto;
+    text-align: center;
+}
+.titre{
+    color: #A10012;
+    font-size : 20px ;
+}
+
+.proverbe
+{
+    color: #6F6CF9;
+    font-size : 20px ;
+}
+
+.cercle {
+    width: 180px;
+    height: 180px;
+    border-radius: 180px;
+}
+
+table{
+    border:0px; padding-top:20px; 
+    right: 600px;
+
+}

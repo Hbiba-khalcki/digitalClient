@@ -1,33 +1,44 @@
-<div  class="navbar"> 
-    <mat-toolbar color="default">
-        <div fxShow="true" fxHide.gt-sm="true">
-          <button mat-icon-button (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
-          </button>
-        </div>
-        <a mat-button class="companyName" routerLink="/">
-          <span>DIGITAL</span>
-        </a>
-        <span class="example-spacer"></span>
-        <div fxShow="true" fxHide.lt-md="true">
-          <a mat-button routerLink="/home" >Acceuil</a>
-          <a mat-button routerLink="">Nos Solutions</a>
-          <a mat-button routerLink="">Ressources</a>
-          <a mat-button routerLink="">A Propos</a>
-       
-        </div>
-      </mat-toolbar>
-      <mat-sidenav-container fxFlexFill class="example-container">
-        <mat-sidenav color="primary" 
-        #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
-          <div fxLayout="column">
-            <a mat-button routerLink="/home">Acceuil</a>
-            <a mat-button routerLink="">Nos Solutions</a>
-            <a mat-button routerLink="">Ressources</a>
-            <a mat-button routerLink="">A Propos</a>
-          </div>
-        </mat-sidenav>
-      
-      </mat-sidenav-container>
-  
+<div class="navbar">
+  <mat-toolbar color="default">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
     </div>
+    <a mat-button class="companyName" routerLink="/">
+      <span>Digital</span>
+    </a>
+
+    
+
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home">Acceuil</a>
+      <a mat-button routerLink="/ressource">Ressources</a>
+      <a mat-button routerLink="/contactez-nous">Contactez-nous</a>
+      <a mat-button routerLink="/propos">A Propos</a> 
+      
+      <!--  
+      <button mat-button [matMenuTriggerFor]="belowMenu" routerLink="/propos">A Propos</button>
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item routerLink="/contactez-nous">Contactez-nous</button>
+        <button mat-menu-item routerLink="/formulaire">Formulaire</button>
+      </mat-menu>   -->
+
+      <a mat-button routerLink="">Connexion</a>
+
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="/home">Acceuil</a>
+        <a mat-button routerLink="/ressource">Ressources</a>
+        <a mat-button routerLink="propos">A Propos</a>
+        <a mat-button routerLink="">Connexion</a>
+      </div>
+    </mat-sidenav>
+
+  </mat-sidenav-container>
+
+</div>
