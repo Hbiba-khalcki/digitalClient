@@ -1,0 +1,88 @@
+.btn-center {
+    text-align: center;
+  }
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+  }
+.col-padding{
+      padding: 50px;
+  }
+.titre{
+      color: #e6004c;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+.text-center{
+      text-align: center;
+  }
+.text-bold{
+      font-weight:500;
+  }
+.mh-100{
+    max-width: 100%;
+  }
+.rep{
+  background-color: #F2F2F2;
+  margin-bottom: 10px;
+  margin-left: 65px;
+  margin-right: 65px;
+}
+.progbar{
+  padding: 15px;
+}
+.numQst{
+      background-color:#e6004c;
+      height: 40px;
+      width: 40px;
+      max-height: 40px !important;
+      max-width: 40px !important;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+.num{
+    color: white;
+    font-size:14px;
+    font-weight:500;
+  }
+.qst{
+    margin-left: 26px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+.partOne{
+    margin: 20px;
+  }
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    background-color: #e6004c!important;
+  }
+  
+  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: #e6004c!important;
+      
+  }
+  
+  ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    
+    border-color:#e6004c !important; 
+  }
+  .btn{
+    background-color: #e6004c !important;
+  }
+
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color: #e6004c !important;
+
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #E4E8EB;
+}
+
+::ng-deep .mat-progress-bar {
+    border-radius: 2px;
+}

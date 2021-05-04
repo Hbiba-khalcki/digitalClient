@@ -1,0 +1,62 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="./assets/images/quest1.png"  class="mh-100" alt="">
+        <p class="titre text-bold"> une seul etape de plus pour acceder a votre rapport </p>
+        <p class="text-bold"> Avant de commencer votre evaluation, <br>
+            veuillez fournir les informations requises <br>
+            pour creer votre compte personnel.
+        </p>
+    </div>
+
+<div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">     
+    <mat-card> 
+        <div fxLayout="row" class="partOne">
+                <div class="numQst" fxFlex.lt-md="20%"><span class="num">1</span></div>
+                <div fxFlex.lt-md="80%" class="qst"> Renseignements Personnels</div>
+        </div>
+    <div>
+                  
+            <div class="form-container">
+                <mat-form-field>
+                <mat-label>Nom de la compagnie</mat-label>
+                <input matInput type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                <mat-label>site web d'entroprise</mat-label>
+                <input matInput type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                <mat-label>adresse de la societes</mat-label>
+                <input matInput type="text">
+                </mat-form-field>  <br>
+                <mat-form-field>
+                    <mat-label>Phone</mat-label>
+                    <input matInput type="text">
+                </mat-form-field>
+                
+            </div>
+
+    </div>
+          <div>
+              <p>     abonnez vous a notre newsletter numerique  <br>
+                      obtenez des articles sur la numerisation et la gestion des <br>
+                      processus pas de partage de votre email desabonnes-vous 
+                      a tout moment
+             </p>
+          </div>
+
+        <div class="btn-center" fxLayout="row">
+            <div fxFlex.lt-md="20%">
+                <button mat-button  class="btn-gray" routerLink="/techservice" disabled> Précédent </button>
+            </div>
+             
+             <div class="numQst" fxFlex.lt-md="20%">
+                 <span class="num" routerLink="/infoentrp">--></span>
+             </div>
+        </div>
+    </mat-card>
+</div>
+</div>
+

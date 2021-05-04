@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/shared/home/home.component';
 import { OrganisationTypeComponent } from'./components/client/renseignements/organisation-type/organisation-type.component';
 import { InfoClientComponent } from './components/client/renseignements/info-client/info-client.component';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FirstComponentComponent } from './components/client/strategie-leadership/first-component/first-component.component';
@@ -24,12 +24,29 @@ import { InfraInfoComponent } from './components/client/infrastructure-informati
 import { TechServiceComponent } from './components/client/technologies-services/tech-service/tech-service.component';
 import { CultInnovComponent } from './components/client/culture-innovation/cult-innov/cult-innov.component';
 import { OprerationProcComponent } from './components/client/operation-processus/opreration-proc/opreration-proc.component';
+import { InfoPersoComponent } from './components/client/renseignements/info-perso/info-perso.component';
+import { InfoEntrpComponent } from './components/client/renseignements/info-entrp/info-entrp.component';
+import { MatSelectModule } from '@angular/material/select';
+import { InfoEntrpTwoComponent } from './components/client/renseignements/info-entrp-two/info-entrp-two.component';
+import { SigninComponent } from './components/shared/login/signin/signin.component';
+import { ScoreComponent } from './components/client/resultat/score/score.component';
+import { SignupComponent } from './components/shared/login/signup/signup.component';
+
+
 @NgModule({
   declarations: [
     AppComponent, 
     NavBarComponent, 
     HomeComponent, 
-    OrganisationTypeComponent, InfoClientComponent, FirstComponentComponent, InfraInfoComponent, TechServiceComponent, CultInnovComponent, OprerationProcComponent
+    OrganisationTypeComponent, 
+    InfoClientComponent,
+    FirstComponentComponent,
+    InfraInfoComponent,
+    TechServiceComponent,
+    CultInnovComponent,
+    OprerationProcComponent, 
+    InfoPersoComponent, 
+    InfoEntrpComponent, InfoEntrpTwoComponent, SigninComponent, ScoreComponent, SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +64,8 @@ import { OprerationProcComponent } from './components/client/operation-processus
     FormsModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSelectModule
   ],
   exports: [
     MatToolbarModule,

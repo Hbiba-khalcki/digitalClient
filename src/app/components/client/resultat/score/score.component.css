@@ -1,0 +1,74 @@
+.btn-center {
+    text-align: center;
+  }
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+  }
+.col-padding{
+      padding: 50px;
+  }
+
+.text-center{
+      text-align: center;
+  }
+.text-bold{
+      font-weight:500;
+  }
+.mh-100{
+    max-width: 100%;
+  }
+
+
+ .numQst{
+      background-color:blueviolet;
+      height: 50px;
+      max-width: 61px !important;
+      border-radius: 50%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      margin: 0 auto;
+  }
+  .num{
+    color: white;
+    font-size:14px;
+    font-weight:500;
+  }
+  .qst{
+    margin-left: 26px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .partOne{
+    margin: 20px;
+  }
+  
+  
+  
+  .btn{
+    background-color: blueviolet !important;
+   
+  }
+  .btn-primary{
+    background-color: blueviolet !important;
+  }
+  .first-card{
+    width: 150px;
+    height: 150px;
+    border-radius: 22px;
+    background-color: rgb(214, 214, 194);
+    padding: 30px;
+    margin: 30px;
+
+  }
+  .second-card{
+    width: 150px;
+    height: 150px;
+    border-radius: 22px;
+    background-color: rgb(246, 246, 238);
+    padding: 30px;
+    margin: 30px;
+  }
