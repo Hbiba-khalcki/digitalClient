@@ -1,0 +1,79 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <div class="numQst"><span class="num">NH</span></div><br>
+        <div> Belaness Nouha Employee</div> <br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled> Rapport de maturité </button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>Historique</button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>edit profil</button> </div><br>
+        <hr>
+        <div> &copy; Groupe DIGITAL <br> N'hesitez pas a nous <br> contacter en cas de <br> confusion</div>
+    </div>
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <div>
+            <mat-card>
+                <div fxLayout="row wrap">
+                    <div fxFlex.lt-md="60%" class="nom"> Bienvenue Nouha</div>
+                    <div fxFlex.lt-md="20%">
+                        <div class="btn-center">
+                            <button mat-button class="btn"> Telecharger votre rapport </button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <mat-tab-group>
+                    <mat-tab label="Recommandations">
+                        <h3 class="title">Vos recommandations personnalisées</h3>
+                        <p>Toutes les recommandations correspondent au score obtenu sur vos <br>
+                            différents axes d'évaluation. </p>
+
+                            <mat-card class="card-style">
+                                <div fxLayout="row">
+                                    <div fxFlex.lt-md="30%">
+                                        <img src="assets/images/sl.jpeg">
+                                    </div>
+                                    <div fxFlex.lt-md="70%">
+                                        <h3 class="title"> strategie et leadership </h3>
+                                        <p class="date">Mise a jour: 02/10/2020</p>
+                                    </div>
+                                </div>
+                                <p class="text">Le texte argumentatif développe un raisonnement ayant pour
+                                    objectif de faire
+                                    admettre à un lecteur
+                                    la validité d'une thèse ou, inversement, de réfuter une thèse couramment
+                                    admise. L'auteur
+                                    d'un texte
+                                    argumentatif veut influencer la pensée du destinataire en l'amenant à
+                                    changer de
+                                    comportement ou de point de vue</p>
+                            </mat-card>
+                            <app-recs-infrastructure></app-recs-infrastructure>
+                            <app-recs-operation></app-recs-operation>
+                            <app-recs-technologie></app-recs-technologie>
+                            <app-recs-culture></app-recs-culture>
+                            <app-recs-general></app-recs-general>
+                    </mat-tab>
+                    <mat-tab label="                                        "></mat-tab>
+                    <mat-tab label="Ressource personnalise">
+                        <h3 class="title">Vos ressources personnalisées</h3>
+                        <p>Toutes les ressources personnalisées à votre score.</p>
+
+                        <app-res-per-strategie></app-res-per-strategie>
+                        <app-res-per-infrastructure></app-res-per-infrastructure>
+                        <app-res-per-operation></app-res-per-operation>
+                        <app-res-per-technologie></app-res-per-technologie>
+                        <app-res-per-culture></app-res-per-culture>
+                   
+                    </mat-tab>
+
+                </mat-tab-group>
+              
+                <div class="btn-center">
+                    <button mat-button class="btn" routerLink="/Stra"> Suivant </button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

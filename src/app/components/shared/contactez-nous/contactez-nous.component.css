@@ -1,15 +1,6 @@
 ::ng-deep app-contactez-nous{
     display: block !important;
-    padding: 20px;  
-}
-.card{
-    position: absolute;
-    top: 80px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    background-color: #F2F2F2;
-    overflow: auto;
+    padding: 5px;  
 }
 h1{
     font-size: 50px;

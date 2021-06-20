@@ -1,0 +1,31 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+    <mat-card-title>Détails de l'expert cliqué</mat-card-title>
+    <mat-card-content>
+      <div fxLayout="column wrap" fxLayoutGap="40px">
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Nom de l'expert :</strong></div>
+          <div fxFlex>
+            <!--{{expert?.name}}--> Nouha
+          </div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Adresse de l'expert :</strong></div>
+          <div fxFlex>{{expert?.name}} Moknine</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Date de naissance :</strong></div>
+          <div fxFlex>{{expert?.dateOfBirth | date}}</div>
+        </div>
+
+      </div>
+    </mat-card-content>
+
+    <div class="btn-center">
+      <button mat-raised-button color="primary" routerLink="/" (click)="redirectToOwnerList()"> Retour </button>
+    </div>
+
+  </mat-card>
+</section>

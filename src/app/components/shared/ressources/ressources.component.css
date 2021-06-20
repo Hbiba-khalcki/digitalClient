@@ -4,8 +4,7 @@
 }
 .card{
     position: absolute;
-    top: 80px;
-    bottom: 20px;
+    top: 10px;
     left: 20px;
     right: 20px;
     background-color: #F2F2F2;

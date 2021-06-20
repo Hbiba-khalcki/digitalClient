@@ -1,0 +1,36 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/question.PNG" class="mh-100">
+        <p class="titre text-bold">Poser un question bien précise appartient à un axe</p>
+        <p class="text-bold"> Pour que l'analyse de digital maturité <br>
+            soit bien étudier : il faut choisir convenable <br>
+            notre démarche des questions et récommandations.</p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form >
+                        <mat-option *ngFor="let nb_rep of nb_reps" [value]="nb_rep"></mat-option>
+                            <mat-form-field>
+                                <mat-label>Réponse :</mat-label>
+                                <input matInput name="reponse" id="reponse" required>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Pourcentage pour reponse :</mat-label>
+                                <input matInput typt="number" name="pourcentage" id="pourcentage" required>
+                            </mat-form-field>
+                        
+                    </form>
+                </div>
+
+                <div class="btn-center">
+                    <button mat-button class="btn-gray" routerLink="/question"> Précédent </button>
+                    <button mat-raised-button color="primary" routerLink="/recommandation"> Suivant </button>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

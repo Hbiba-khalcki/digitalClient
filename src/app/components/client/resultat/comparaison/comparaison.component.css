@@ -1,0 +1,44 @@
+.btn-center {
+    text-align: center;
+  }
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+  }
+.col-padding{
+      padding: 50px;
+  }
+
+.text-center{
+      text-align: center;
+  }
+.btn{
+    background-color: blueviolet !important; 
+}
+.btn-primary{
+    background-color: blueviolet !important;
+    margin-left: 100px;
+ }
+ .axe{
+   margin: 20px;
+   padding: 10px;
+ }
+ .type{
+   margin: 10px;
+ }
+ .btn-center{
+  margin: 0 auto;
+ }
+ 
+
+ .text{
+   margin-top: 20px;
+   margin-right: 20px;
+ }
+
+
+ #chart {
+  max-width: 380px;
+  margin: 35px auto;
+  padding: 0;
+}

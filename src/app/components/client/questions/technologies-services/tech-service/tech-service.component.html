@@ -1,0 +1,45 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="./assets/images/Quest/quest4.PNG" class="mh-100" alt="">
+        <p class="titre text-bold"> Etape 4 / 5 </p>
+        <p class="titre text-bold"> Technologies et services </p>
+        <p class="text-bold"> Cette dimension concerne l'adoption et l'application de <br>
+            nouvelles technologies dans l'entreprise, que <br>
+            ce soit pour le fonctionnement de l'entreprise <br>
+            ou lors du développement de nouveaux <br>
+            produits / services. <br>
+        </p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div fxLayout="row" class="partOne">
+
+                <div class="numQst" fxFlex.lt-md="20%"><span class="num">1</span></div>
+                <div fxFlex.lt-md="80%" class="qst"> Que signifie pour vous le terme "transformation numerique"</div>
+
+            </div>
+            <div>
+                <mat-card class="rep">
+                    <div fxLayout="row">
+                        <div fxFlex.lt-md="20%">
+                            <mat-radio-group>
+                                <mat-radio-button value="1"></mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div fxFlex.lt-md="80%">
+                            <p> question n 1 </p>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div class="progbar">
+                <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+            </div>
+            <div class="btn-center">
+                <button mat-button class="btn-gray" routerLink="/operationproc"> Précédent </button>
+                <button mat-raised-button class="btn" routerLink="/cultinnov"> Suivant </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

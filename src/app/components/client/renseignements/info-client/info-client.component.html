@@ -1,53 +1,60 @@
 <div fxLayout="row wrap">
-    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
-        <img src="assets/images/inscritm.png"  class="mh-100" alt="">
-        <p class="titre text-bold"> Evaluation de votre maturite numerique </p>
-        <p class="text-bold"> Avant de commencer votre evaluation, <br>
-            veuillez fournir les informations requises <br>
-            pour creer votre compte personnel.</p>
-    </div>
-    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
-        <mat-card>
+  <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+    <img src="assets/images/inscritm.png" class="mh-100" alt="">
+    <p class="titre text-bold"> Évaluation de votre maturité numérique </p>
+    <p class="text-bold">Avant de commencer votre évaluation, <br>
+      veuillez fournir les informations requises <br>
+      pour créer votre compte personnel.</p>
+  </div>
+  <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+    <mat-card>
+      <div>
+        <h1> Nous vous suggérons de saisir vos informations pour : </h1>
+        <p>
+          * Recevez vos recommandations et actions à entreprendre; <br>
+          * Recevez votre rapport détaillé; <br>
+          * Reprenez la saisie de vos réponses en cas d'interruption.<br>
+        </p>
+        <div class="form-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Nom : </mat-label>
+            <input matInput type="text" placeholder="Nom">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Prénom :</mat-label>
+            <input matInput type="text" placeholder="Prénom">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Email :</mat-label>
+            <input matInput type="text" placeholder="Email">
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="outline">
+            <mat-label>Nom de l'entreprise :</mat-label>
+            <input matInput type="text" placeholder="entreprise">
+          </mat-form-field>
+        </div>
 
-            <div>
-                <p>
-                    Nous vous suggerons de saisir vos informations pour: <br>
-                    * Recevrez vous recommandations et actions a entreprendre,<br>
-                    * Recevez votre rapport detaille,<br>
-                    * Reprenez la saisie de vos reponses en cas d'intrerruption. <br>
-                </p> 
-                <div class="form-container">
-                    <mat-form-field>
-                      <mat-label>Prenom</mat-label>
-                      <input matInput type="text">
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field>
-                      <mat-label>Email</mat-label>
-                      <input matInput type="text">
-                    </mat-form-field>
-                    <br>
-                    <mat-form-field>
-                      <mat-label>Nom de l'entreprse</mat-label>
-                      <input matInput type="text">
-                    </mat-form-field>
-                  </div>
+        <section class="example-section">
+          <mat-checkbox class="example-margin">Abonnez-vous a notre newsletter numerique</mat-checkbox>
+        </section>
+        <p>
+          <br>
+          Obtenez des articles sur les numerisation et la gestion des <br>
+          processus. Pas de partage de votre email, désabonnez-vous a <br>
+          tout moment.
+        </p>
 
+        <div class="btn-center">
+          <button mat-button class="btn-gray" routerLink="/typeorganisation"> Précédent </button>
+          <button mat-raised-button color="primary" routerLink="/straLead"> Suivant </button>
+        </div>
 
-                <p> abonnez-vous a notre newsletter numerique <br>
-                    Obtenez des articles sur les numerisation et la gestion des <br>
-                    processus. Pas de partage de votre email, désabonnez-vous a <br>
-                    tout moment.
-                 </p>
-
-                <div class="btn-center">
-                    <button mat-button class="btn-gray" routerLink="/typeorganisation"> Précédent </button>
-                    <button mat-raised-button color="primary" routerLink="/sectionOne"> Suivant </button>
-                </div>
-
-            </div>
-        </mat-card>
-    </div>
+      </div>
+    </mat-card>
+  </div>
 
 
 </div>

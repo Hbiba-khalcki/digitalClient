@@ -1,0 +1,104 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="./assets/images/inscritm.png" class="mh-100" alt="">
+        <p class="titre text-bold"> Une seule étape de plus <br>
+            pour accéder à votre rapport </p>
+        <p class="text-bold"> Enfin, nous devons apprendre à vous <br>
+            connaître. Pour ce faire, voici quelques <br>
+            questions pour nous aider à qualifier <br>
+            l'entreprise.
+        </p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div fxLayout="row" class="partOne">
+                <div class="numQst" fxFlex.lt-md="20%"><span class="num">2.2</span></div>
+                <div fxFlex.lt-md="80%" class="qst"> Informations sur votre entreprise (2)</div>
+            </div>
+
+            <div class="form-container">
+                <mat-form-field appearance="fill">
+                    <mat-label>Dans quel type d'entreprise êtes-vous? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <mat-select>
+                        <mat-option value="option1">Société</mat-option>
+                        <mat-option value="option2">Coopérative</mat-option>
+                        <mat-option value="option3">Institution gouvernementale</mat-option>
+                        <mat-option value="option4">PME</mat-option>
+                        <mat-option value="option5">Startup</mat-option>
+                        <mat-option value="option6">Autre</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Est-ce une entreprise familiale? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <mat-select>
+                        <mat-option value="oui">Oui</mat-option>
+                        <mat-option value="non">Non</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>En quelle année l'entreprise a-t-elle été fondée? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <input matInput type="text" placeholder="annee_entreprise">
+                  </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>À quel stade de développement l'entreprise est-elle? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <mat-select>
+                        <mat-option value="option1">Start-up</mat-option>
+                        <mat-option value="option2">Croissance</mat-option>
+                        <mat-option value="option3">Établi</mat-option>
+                        <mat-option value="option4">Nouvelle acquisition</mat-option>
+                        <mat-option value="option5">Internationalisation</mat-option>
+                        <mat-option value="option6">En difficulté</mat-option>
+                        <mat-option value="option7">Autre</mat-option>
+                    </mat-select>
+                </mat-form-field> 
+   
+                <mat-form-field appearance="fill">
+                    <mat-label>Quel est le nombre d'employés? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <mat-select>
+                        <mat-option value="option1">Individu</mat-option>
+                        <mat-option value="option2">1-10</mat-option>
+                        <mat-option value="option3">11-50</mat-option>
+                        <mat-option value="option4">51-200</mat-option>
+                        <mat-option value="option5">201-500</mat-option>
+                        <mat-option value="option6">501-1000</mat-option>
+                        <mat-option value="option7">Plus de 1000 </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Quel est le revenu annuel ($)? </mat-label>
+                    <mat-label class="obligation">*</mat-label>
+                    <mat-select>
+                        <mat-option value="option1">Moins de 100k</mat-option>
+                        <mat-option value="option2">100k et 1M</mat-option>
+                        <mat-option value="option3">Entre 1M et 8M</mat-option>
+                        <mat-option value="option4">Entre 8M et 20M</mat-option>
+                        <mat-option value="option5">Entre 20M et 100M</mat-option>
+                        <mat-option value="option6">Plus de 100M</mat-option>
+                        <mat-option value="option7">Je ne préfère pas donner ces informations</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+            <div class="btn-center" fxLayout="row">
+                <div fxFlex.lt-md="20%">
+                    <button mat-button class="btn-gray" routerLink="/" disabled> Précédent </button>
+                </div>
+
+                <button mat-fab color="'primary'" >
+                    <mat-icon  routerLink="/score">trending_flat</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

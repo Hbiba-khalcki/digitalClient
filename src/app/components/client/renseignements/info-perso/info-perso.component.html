@@ -1,0 +1,68 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="./assets/images/inscritm.png" class="mh-100" alt="">
+        <p class="titre text-bold"> Une seule étape de plus <br>
+            pour accéder à votre rapport </p>
+        <p class="text-bold"> Enfin, nous devons apprendre à vous <br>
+            connaître. Pour ce faire, voici quelques <br>
+            questions pour nous aider à qualifier <br>
+            l'entreprise.
+        </p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div fxLayout="row" class="partOne">
+                <div class="numQst" fxFlex.lt-md="20%"><span class="num">1</span></div>
+                <div fxFlex.lt-md="80%" class="qst"> Renseignements Personnels</div>
+            </div>
+            <div>
+
+                <div class="form-container">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nom :</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Prénom :</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email :</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Téléphone :</mat-label>
+                        <input matInput type="text">
+                    </mat-form-field>
+
+                </div>
+
+            </div>
+            <div>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Abonnez-vous a notre newsletter numerique</mat-checkbox>
+                </section>
+                <p>
+                    <br>
+                    Obtenez des articles sur les numerisation et la gestion des <br>
+                    processus. Pas de partage de votre email, désabonnez-vous a <br>
+                    tout moment.
+                </p>
+            </div>
+
+            <div class="btn-center" fxLayout="row">
+                <div fxFlex.lt-md="20%">
+                    <button mat-button class="btn-gray" routerLink="/techservice" disabled> Précédent </button>
+                </div>
+
+                <button mat-fab color="'primary'" >
+                    <mat-icon  routerLink="/infoentrp">trending_flat</mat-icon>
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>

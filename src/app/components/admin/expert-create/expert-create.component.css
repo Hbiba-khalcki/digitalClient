@@ -1,0 +1,13 @@
+mat-form-field{
+    width: 400px;
+}
+mat-card-title{
+    text-align: center;
+}
+.btn-center {
+    text-align: center;
+  }
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+}

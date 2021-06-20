@@ -1,0 +1,84 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <div class="numQst"><span class="num">NH</span></div><br>
+        <div> Belaness Nouha Employee</div> <br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled> Rapport de maturité </button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>Historique</button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>edit profil</button> </div><br>
+        <hr>
+        <div> &copy; Groupe DIGITAL <br> N'hesitez pas a nous <br> contacter en cas de <br> confusion</div>
+    </div>
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <div>
+            <mat-card>
+                <div fxLayout="row">
+                    <div fxFlex.lt-md="60%" class="nom"> Bienvenue Nouha</div>
+                    <div fxFlex.lt-md="20%"><button mat-button class="btn-primary">Telecharger votre rapport</button>
+                        <br>
+                    </div>
+                </div>
+                <mat-tab-group>
+                    <mat-tab label="Axes d'évaluation">
+                        <div fxLayout="column" fxLayoutAlign="center start" class="text">
+                            <strong>Détail de votre score de maturité numérique</strong>
+                            <p>
+                                Les dernières mises à jour de vos scores de maturité
+                                par axe de maturité.
+                            </p>
+                        </div>
+                        <div class="axe">
+                            <mat-card>
+                                <div>Axe</div>
+                                <hr>
+                                <div fxLayout="row" fxLayoutAlign="space-around center">
+                                    <mat-label>Culture innovation </mat-label>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <mat-label>40%</mat-label>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" fxLayoutAlign="space-around center">
+                                    <mat-label>Infrastructure informatique</mat-label>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <mat-label>40%</mat-label>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" fxLayoutAlign="space-around center">
+                                    <mat-label>Operation precessus </mat-label>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <mat-label>40%</mat-label>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" fxLayoutAlign="space-around center">
+                                    <mat-label>Stratergie leadership </mat-label>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <mat-label>40%</mat-label>
+                                </div>
+                                <hr>
+                                <div fxLayout="row" fxLayoutAlign="space-around center">
+                                    <mat-label>Technologies et service </mat-label>
+                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+                                    <mat-label>40%</mat-label>
+                                </div>
+                            </mat-card>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Evolution">
+                        <app-evolution></app-evolution>
+                    </mat-tab>
+                    <mat-tab label="Comparaison">
+                        <app-comparaison></app-comparaison>
+                    </mat-tab>
+                </mat-tab-group>
+              
+              
+
+                <div class="btn-center">
+                    <button mat-button class="btn" routerLink="/resStr"> Suivant </button>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

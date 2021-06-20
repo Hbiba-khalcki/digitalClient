@@ -1,0 +1,55 @@
+.btn-center {
+    text-align: center;
+  }
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+  }
+.col-padding{
+      padding: 30px;
+  }
+
+.text-center{
+      text-align: center;
+  }
+.btn{
+    background-color: blueviolet !important;
+}
+.btn-primary{
+    background-color: blueviolet !important;
+    margin-left: 100px;
+ }
+ .axe{
+   padding: 10px;
+ }
+ .type{
+   margin: 10px;
+ }
+ .btn-center{
+  margin: 0 auto;
+ }
+ mat-tab label{
+   color: violet;
+ }
+mat-progress-bar { 
+  width: 50%;
+  height: 7px;
+  border-radius: 4px;
+}
+.nom
+{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.text{
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.evolution
+{
+  padding: 50px;
+}
+
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #b68200;
+}

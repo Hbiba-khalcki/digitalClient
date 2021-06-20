@@ -1,0 +1,40 @@
+.col-padding{
+    padding: 50px;
+}
+.text-center{
+    text-align: center;
+}
+.btn{
+  background-color: blueviolet !important;
+}
+.btn-center {
+  text-align: right;
+}
+.btn-gray {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  margin-right: 15px;
+}
+.axe{
+ margin: 20px;
+ padding: 10px;
+}
+.type{
+ margin: 10px;
+}
+.btn-center{
+margin: 0 auto;
+}
+.card-style{
+   margin: 20px;
+  box-shadow: 0px 2px 1px 1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+.title{
+  font-weight: 600;
+  font-size: 16px;
+}
+.date{
+  color: #858484;
+}
+.text{
+  color: #858484;
+}

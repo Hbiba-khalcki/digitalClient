@@ -1,0 +1,88 @@
+<section fxLayout="row wrap" fxLayoutAlign="center center">
+  <mat-card fxFlex="500px" fxFlex.xs="100%">
+
+    <mat-card-title>Supprimer pour l'expert cliqué</mat-card-title>
+    <mat-card-content>
+      <div fxLayout="column wrap" fxLayoutGap="40px">
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Nom de l'expert :</strong></div>
+          <div fxFlex>{{expert?.name}} Nouha</div>
+        </div>
+
+        <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Adresse de l'expert :</strong></div>
+            <div fxFlex>{{expert?.name}} Moknine</div>
+          </div>
+  
+        <div fxLayout="row wrap" fxFlex>
+          <div fxFlex><strong>Date de naissance :</strong></div>
+          <div fxFlex>{{expert?.dateOfBirth | date}}</div>
+        </div>
+  
+        <ng-template #advancedUser>
+          <div fxLayout="row wrap" fxFlex>
+            <div fxFlex><strong>Type of user:</strong></div>
+            <div fxFlex class="advanced-color">Advanced user</div>
+          </div>
+        </ng-template>
+      
+      </div>
+    </mat-card-content>
+
+    <div class="btn-center">
+      <button mat-button class="btn-gray" routerLink="/" (click)="deleteExpert()"> Annuler </button>
+      <button mat-raised-button color="primary" routerLink="/" (click)="redirectToExpertList()"> Supprimer </button>
+    </div>
+    
+  </mat-card>
+
+  <!--          
+  <div class="row">
+    <div class="col-md-10 card card-body bg-light mb-2 mt-2">
+
+      <div class="row">
+        <div class="col-md-3">
+          <label for="name" class="control-label">Owners name:</label>
+        </div>
+        <div class="col-md-7">
+          <span name="name">
+            {{owner?.name}}
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <label for="dateOfBirth" class="control-label">Date of birth:</label>
+        </div>
+        <div class="col-md-7">
+          <span name="dateOfBirth">
+            {{owner?.dateOfBirth | date: 'MM/dd/yyyy'}}
+          </span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <label for="address" class="control-label">Address:</label>
+        </div>
+        <div class="col-md-7">
+          <span name="address">
+            {{owner?.address}}
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-offset-8 col-md-1">
+      <button type="submit" class="btn btn-info" (click)="deleteOwner()">Delete</button>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-danger" (click)="redirectToOwnerList()">Cancel</button>
+    </div>
+  </div>
+  -->
+</section>

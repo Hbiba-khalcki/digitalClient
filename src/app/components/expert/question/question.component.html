@@ -1,5 +1,4 @@
 <div fxLayout="row wrap">
-
     <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
         <img src="assets/images/question.PNG" class="mh-100">
         <p class="titre text-bold">Poser un question bien précise appartient à un axe</p>
@@ -37,17 +36,16 @@
 
                         <div>
                             <mat-form-field style="width: 475px;">
-                                <mat-label>les choix :</mat-label>
-                                <input matInput name="choix" id="choix" required>
+                                <mat-label>nombre de reponses :</mat-label>
+                                <input matInput name="nb_reps" id="nb_reps" required>
                             </mat-form-field>
-                            <button mat-raised-button color="primary" routerLink="/"> --></button>
                         </div>
                     </form>
                 </div>
 
                 <div class="btn-center">
                     <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
-                    <button mat-raised-button color="primary" routerLink="/"> Suivant </button>
+                    <button mat-raised-button color="primary" routerLink="/reponses"> Suivant </button>
                 </div>
 
             </div>

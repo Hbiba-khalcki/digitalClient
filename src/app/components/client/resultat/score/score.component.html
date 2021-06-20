@@ -1,0 +1,59 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <div class="numQst"><span class="num">NH</span></div><br>
+        <div> Belaness Nouha <br> Employee</div>
+        <br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled> Rapport de maturité </button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>Historique</button> </div><br>
+        <hr>
+        <div><button mat-button class="btn-gray" disabled>Edit profil</button> </div><br>
+        <hr>
+        <div> &copy; Groupe DIGITAL <br> N'hesitez pas a nous <br> contacter en cas de <br> confusion</div>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div fxLayout="row">
+                <div fxFlex.lt-md="60%" class="qst"> Bienvenue Nouha</div>
+                <div fxFlex.lt-md="20%"><button mat-button class="btn-primary">Télécharger votre rapport</button>
+                    <br>
+                </div>
+            </div>
+
+            <div fxFlex.lt-md="60%">Voici les résultats de votre dernière évaluation</div>
+
+            <div fxLayout="row">
+                <div fxFlex.lt-md="50%">
+                    <mat-card class="first-card">Le score de votre entreprise <br>
+                        <div fxLayout="colum" fxLayoutAlign="space-evenly center">
+
+                            <div fxFlex.lt-md="40%" class="pourcentage"> 12% | </div>
+
+                            <div fxLayout="column" fxLayoutAlign="space-evenly center">
+                                <div fxFlex.lt-md="40%" class="petitForme"> Votre entreprise est : </div>
+
+                                <div fxFlex.lt-md="40%" class="grandForme"> Traditionaliste </div>
+                            </div>
+
+                        </div>
+                    </mat-card>
+                </div>
+                <div fxFlex.lt-md="50%">
+                    <mat-card class="second-card">
+                        <div fxLayout="column" fxLayoutAlign="space-around start">
+                            <div fxFlex.lt-md="40%" class="grandForme">Nos recommandations</div>
+                            <div fxFlex.lt-md="40%" class="grandForme">18 </div>
+                            <div fxFlex.lt-md="40%" class="petitForme"> Disponible </div>
+                            <div fxFlex.lt-md="40%" class="petitForme">recommandations</div>
+                        </div>
+                    </mat-card>
+                </div>
+            </div>
+            <div>
+                <button mat-button class="btn" routerLink="/axesevaluation"> Précédent </button>
+            </div>
+        </mat-card>
+    </div>
+</div>
