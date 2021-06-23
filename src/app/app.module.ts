@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule} from '@angular/material/menu';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
@@ -45,14 +45,14 @@ import { ReponsesComponent } from './components/expert/reponses/reponses.compone
 
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import {MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { ExpertCreateComponent } from './components/admin/expert-create/expert-create.component';
 import { ExpertListComponent } from './components/admin/expert-list/expert-list.component';
 import { ExpertDetailComponent } from './components/admin/expert-detail/expert-detail.component';
 import { ExpertDeleteComponent } from './components/admin/expert-delete/expert-delete.component';
 import { ExpertEditComponent } from './components/admin/expert-edit/expert-edit.component';
 
-import{ MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { AxesEvaluationComponent } from './components/client/resultat/axes-evaluation/axes-evaluation.component';
 import { ComparaisonComponent } from './components/client/resultat/comparaison/comparaison.component';
@@ -78,6 +78,7 @@ import { StrategieLeadershipComponent } from './components/client/questions/stra
 
 import { RecsGeneralComponent } from './components/client/resultat/recommandation/recs-general/recs-general.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -92,13 +93,18 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     QuestionComponent, 
     RecommandationComponent,
 
-    StrategieLeadershipComponent, InfraInfoComponent, TechServiceComponent, CultInnovComponent, OprerationProcComponent,
-    
-    InfoEntrpComponent,InfoEntrpTwoComponent,InfoPersoComponent,
-
-    ScoreComponent,
-
-    SigninComponent,SignupComponent, ReponsesComponent, 
+    StrategieLeadershipComponent, 
+    InfraInfoComponent,
+    TechServiceComponent,
+    CultInnovComponent,
+    OprerationProcComponent,
+    InfoEntrpComponent,
+    InfoEntrpTwoComponent,
+    InfoPersoComponent,
+     ScoreComponent,
+    SigninComponent,
+    SignupComponent, 
+    ReponsesComponent, 
     
     ExpertCreateComponent, ExpertListComponent, ExpertDetailComponent, ExpertDeleteComponent, ExpertEditComponent, AxesEvaluationComponent, ComparaisonComponent, EvolutionComponent, 
     
@@ -143,6 +149,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     MatProgressSpinnerModule,
 
     NgApexchartsModule,
+    HttpClientModule
 
   ],
   exports: [

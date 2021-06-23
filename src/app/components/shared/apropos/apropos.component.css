@@ -4,9 +4,6 @@
 .card{
     margin: 40px;
     padding: 20px;
-    background-image: url('C:/Users/ASUS/Desktop/pfe code/FinalCode/gitFile/digitalClient/src/assets/images/bachground.jpg');
-
-    background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
 }
