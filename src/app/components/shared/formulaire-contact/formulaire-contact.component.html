@@ -1,75 +1,52 @@
 <div>
     <mat-card class="card">
+
         <div fxLayout="colum" fxLayoutAlign=" none">
-            <mat-icon class="aucun">mail_outline</mat-icon> <h1> <strong> Formulaire </strong> de contact.</h1>
-           
+            <mat-icon class="aucun">mail_outline</mat-icon> 
+            <h1> <strong> Formulaire </strong> de contact.</h1>
         </div>
+
         <form class="form">
             <div fxLayout="row" fxLayoutAlign="stretch">
-                <p>
+ 
                     <mat-form-field appearance="outline">
                         <br>
-                        <mat-label class="my-label">Nom et Prénom :</mat-label>
+                        <mat-label class="my-label">Subject :</mat-label>
                         <br>
                         <div div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="Nom et Prénom" type="text" required>
-                            <mat-icon>perm_identity</mat-icon>
+                            <input matInput placeholder="Subject" type="text" required [(ngModel)]="contact.subject">
+                            <mat-icon> perm_identity </mat-icon>
                         </div>
                     </mat-form-field>
-                </p>
 
-                <p>
-                    <mat-form-field appearance="outline">
-                        <br>
-                        <mat-label class="my-label">Entreprise :</mat-label>
-                        <br>
-                        <div div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="Entreprise" name="entreprise" required>
-                            <mat-icon> business</mat-icon>
-                        </div>
-                    </mat-form-field>
-                </p>
-
-            </div>
-            <br>
+            </div> <br>
+        
             <div div fxLayout="row" fxLayoutAlign="stretch">
-                <p>
+                          
                     <mat-form-field appearance="outline">
                         <br>
-                        <mat-label class="my-label">Téléphone :</mat-label>
+                        <mat-label class="my-label">email :</mat-label>
                         <br>
                         <div div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="Téléphone" name="tel" required>
-                            <mat-icon> call</mat-icon>
-                        </div>
-                    </mat-form-field>
-                </p>
-
-                <p>
-                    <mat-form-field appearance="outline">
-                        <br>
-                        <mat-label class="my-label">Email :</mat-label>
-                        <br>
-                        <div div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="Email" name="email" required>
+                            <input matInput placeholder="email" name="email" required [(ngModel)]="contact.email">
                             <mat-icon> mail_outline</mat-icon>
                         </div>
-                    </mat-form-field>
-                </p>
-            </div>
-            <p>
+                    </mat-form-field>   
+
+             </div> <br>
+         
                 <mat-form-field appearance="outline" class="Mat-Msg">
                     <br>
                     <mat-label class="my-label">Votre demande :</mat-label>
                     <br>
                     <div div fxLayout="row" fxLayoutAlign="space-between none">
-                        <input matInput placeholder="message" name="msg" required>
+                        <input matInput placeholder="message" name="msg" required [(ngModel)]="contact.message">
                         <mat-icon> chat_bubble_outline</mat-icon>
                     </div>
-                </mat-form-field>
-            </p>
+                </mat-form-field>  <br><br>
+               
 
-            <button class="my-button" mat-raised-button color="primary" routerLink="">Envoyer</button>
+            <button class="my-button" mat-raised-button color="primary" (click)="sendmsg()" >Envoyer</button>
         </form>
 
     </mat-card>

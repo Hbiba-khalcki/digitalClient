@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-formulaire-contact',
@@ -10,9 +11,20 @@ import { Component, OnInit } from '@angular/core';
 
 export class FormulaireContactComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  contact: { subject: string, email: string, message:string } = {
+    subject: '',
+    email: '',
+    message: ''
+  };  
+  constructor(private contactService :ContactService) {}
+  sendmsg(){
+      this.contactService.sendemail(this.contact).subscribe(res=>{
+        console.log("sent",this.contact,res)
+      })
+    
+    }
+  ngOnInit() {
   }
+
 
 }
