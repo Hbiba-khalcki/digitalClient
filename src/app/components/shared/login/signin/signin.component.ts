@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/components/services/auth.service';
-import { TokenStorageService } from 'src/app/components/services/token-storage.service';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from 'src/app/components/services/auth.service';
+import {TokenStorageService} from 'src/app/components/services/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -16,19 +17,30 @@ export class SigninComponent implements OnInit {
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
-  roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) {
+  }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+      if (this.tokenStorage.getRole()) {
+        switch (this.tokenStorage.getRole()) {
+          case 'ROLE_ADMIN':
+            this.router.navigate(['list-exp']);
+            break;
+          case 'ROLE_EXPERT':
+            this.router.navigate(['question']);
+            break;
+          case 'ROLE_USER':
+            this.router.navigate(['typeorganisation']);
+            break;
+        }
+      }
     }
   }
 
   onSubmit(): void {
-    const { username, password } = this.form;
+    const {username, password} = this.form;
 
     this.authService.login(username, password).subscribe(
       data => {
@@ -37,8 +49,25 @@ export class SigninComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
+
+        if (this.tokenStorage.getToken()) {
+          if (this.tokenStorage.getRole()) {
+            switch (this.tokenStorage.getRole()) {
+              case 'ROLE_ADMIN':
+                // route par default admin
+                this.router.navigate(['list-exp']);
+                break;
+              case 'ROLE_EXPERT':
+                // route par default expert
+                this.router.navigate(['question']);
+                break;
+              case 'ROLE_USER':
+                // route par default client
+                this.router.navigate(['typeorganisation']);
+                break;
+            }
+          }
+        }
       },
       err => {
         this.errorMessage = err.error.message;

@@ -22,7 +22,7 @@ import { HomeComponent } from './components/shared/home/home.component';
 import { OrganisationTypeComponent } from'./components/client/renseignements/organisation-type/organisation-type.component';
 import { InfoClientComponent } from './components/client/renseignements/info-client/info-client.component';
 import { AproposComponent } from './components/shared/apropos/apropos.component';
-import { ContactezNousComponent } from './components/shared/contactez-nous/contactez-nous.component';
+
 import { FormulaireContactComponent } from './components/shared/formulaire-contact/formulaire-contact.component';
 import { RessourcesComponent } from './components/shared/ressources/ressources.component';
 import { MatInputModule } from '@angular/material/input';
@@ -79,6 +79,7 @@ import { StrategieLeadershipComponent } from './components/client/questions/stra
 import { RecsGeneralComponent } from './components/client/resultat/recommandation/recs-general/recs-general.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactezNousComponent } from './components/shared/apropos/contactez-nous/contactez-nous.component';
 @NgModule({
   declarations: [
     AppComponent, 
