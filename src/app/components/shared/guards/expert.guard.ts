@@ -12,13 +12,13 @@ export class ExpertGuard implements CanActivate, CanActivateChild {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const ROLE = 'ROLE_CLIENT';
+    const ROLE = 'ROLE_EXPERT';
     return ROLE === this.tokenStorageService.getRole();
   }
   canActivateChild(
     childRoute: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const ROLE = 'ROLE_CLIENT';
+    const ROLE = 'ROLE_EXPERT';
     return ROLE === this.tokenStorageService.getRole();
   }
 }

@@ -46,6 +46,7 @@ import {ContactezNousComponent} from './components/shared/apropos/contactez-nous
 import {AdminGuard} from './components/shared/guards/admin.guard';
 import {ClientGuard} from './components/shared/guards/client.guard';
 import {ExpertGuard} from './components/shared/guards/expert.guard';
+import { LogoutComponent } from './components/shared/login/logout/logout.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -98,6 +99,7 @@ const routes: Routes = [
   {path: 'resTech', component: RecsTechnologieComponent},
   {path: 'resCul', component: RecsCultureComponent},
   {path: 'resGen', component: RecsGeneralComponent},
+  {path: 'logout', component: LogoutComponent},
 
 
 ];
