@@ -81,6 +81,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactezNousComponent } from './components/shared/apropos/contactez-nous/contactez-nous.component';
 import { LogoutComponent } from './components/shared/login/logout/logout.component';
+import { AxeComponent } from './components/expert/axe/axe.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -112,7 +113,7 @@ import { LogoutComponent } from './components/shared/login/logout/logout.compone
     
     ResPerStrategieComponent, ResPerInfrastructureComponent, ResPerOperationComponent, ResPerTechnologieComponent, ResPerCultureComponent, 
    
-    RecsCultureComponent, RecsStrategieComponent, RecsInfrastructureComponent, RecsOperationComponent, RecsTechnologieComponent, RecsGeneralComponent, LogoutComponent,
+    RecsCultureComponent, RecsStrategieComponent, RecsInfrastructureComponent, RecsOperationComponent, RecsTechnologieComponent, RecsGeneralComponent, LogoutComponent, AxeComponent,
     
 
   ],

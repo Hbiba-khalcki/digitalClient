@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/auth.service'
+import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -9,7 +10,8 @@ export class SignupComponent implements OnInit {
   form: any = {
     username: null,
     email: null,
-    password: null
+    password: null, 
+    role:null,
   };
   isSuccessful = false;
   isSignUpFailed = false;
@@ -21,9 +23,9 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(): void {
-    const { username, email, password } = this.form;
+    const { username, email, password, role } = this.form;
 
-    this.authService.register(username, email, password).subscribe(
+    this.authService.register(username, email, password, role).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;

@@ -12,7 +12,8 @@
             <div>
                 <div fxLayout="row" fxLayoutAlign="stretch">
                     <form >
-                        <mat-option *ngFor="let nb_rep of nb_reps" [value]="nb_rep"></mat-option>
+                        <div *ngFor="let nb_rep of numbers">
+                            <mat-label>Réponse {{nb_rep+1}}</mat-label>
                             <mat-form-field>
                                 <mat-label>Réponse :</mat-label>
                                 <input matInput name="reponse" id="reponse" required>
@@ -22,7 +23,7 @@
                                 <mat-label>Pourcentage pour reponse :</mat-label>
                                 <input matInput typt="number" name="pourcentage" id="pourcentage" required>
                             </mat-form-field>
-                        
+                        </div>
                     </form>
                 </div>
 

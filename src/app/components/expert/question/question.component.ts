@@ -1,30 +1,65 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Axe } from 'src/app/models/axe.model';
+import { AxeService } from 'src/app/services/axe.service';
+import { QuestionService } from 'src/app/services/question.service';
 
-import {FormControl, Validators} from '@angular/forms';
 
-interface Axe {
-  name: string;
-}
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
 export class QuestionComponent implements OnInit {
+questionFormGroup:FormGroup;
+submitted:boolean=false;
+axes:Axe[] = [];
 
-  axesControl = new FormControl('', Validators.required);
-  selectFormControl = new FormControl('', Validators.required);
-  axes: Axe[] = [
-    {name: 'Stratégie et leadership'},
-    {name: 'Infrastructure informatique et de données'},
-    {name: 'Opérations et processus'},
-    {name: 'Technologies et services'},
-    {name: 'Culture et innovation'}
-  ];
 
-  constructor() { }
+  constructor(private questionService:QuestionService,
+              private fb: FormBuilder,
+              private router:Router,
+              private axeService: AxeService,
+             ) { }
 
   ngOnInit(): void {
+
+      this.axeService.getAllAxes().subscribe(data=> {
+      this.axes=data;
+      },err=>{
+        console.log(err);
+      }),
+    
+  
+    this.questionFormGroup=this.fb.group({
+      contenu:["",Validators.required],
+      pourcentage:["",Validators.required],
+      axe:["test",Validators.required],
+      nbrReponse:["",Validators.required],
+  });
+ 
+}
+  onSaveQuestions(){
+    this.submitted=true;
+    if(this.questionFormGroup?.invalid) return;
+    this.questionService.saveQuestion(this.questionFormGroup?.value).subscribe((data:any)=>{
+      console.log("question_id",data)
+      alert("succes save") 
+      this.router.navigate(["/reponse",data.id])
+    });
   }
 
-}
+
+
+
+   /*onGetAllAxes(){
+      this.axes=this.axeService.getAllAxes().pipe(
+       map(data=> ({ dataState: DataStateEnum.LOADED,data:data })),
+       startWith({dataState:  DataStateEnum.LOADING}),
+        catchError(err=> of({dataState:  DataStateEnum.ERROR,errorMessage:err.message}))
+      );
+    }*/
+  }
+
+

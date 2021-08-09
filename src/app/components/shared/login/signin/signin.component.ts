@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from 'src/app/components/services/auth.service';
-import {TokenStorageService} from 'src/app/components/services/token-storage.service';
+
 import {Router} from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-signin',
@@ -59,7 +60,7 @@ export class SigninComponent implements OnInit {
                 break;
               case 'ROLE_EXPERT':
                 // route par default expert
-                this.router.navigate(['question']);
+                this.router.navigate(['axe']);
                 break;
               case 'ROLE_USER':
                 // route par default client
