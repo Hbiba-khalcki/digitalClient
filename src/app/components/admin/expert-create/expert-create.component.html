@@ -1,34 +1,27 @@
-<section fxLayout="row wrap" fxLayoutAlign="center center">
-    <mat-card fxFlex="500px" fxFlex.xs="100%">
-        <mat-card-title>Créer un nouvel expert</mat-card-title>
-        <form [formGroup]="expertForm" autocomplete="off" novalidate (ngSubmit)="createExpert(expertForm.value)" fxLayout="column wrap"
-            fxLayoutAlign="center center" fxLayoutGap="10px">
-            <mat-card-content>
-                <mat-form-field>
-                    <input matInput type="text" placeholder="Nom de l'expert" formControlName="name" id="name">
-                    <mat-hint align="end">Pas plus de 60 caractères.</mat-hint>
-                    <mat-error *ngIf="hasError('name', 'required')">Le nom est requis</mat-error>
-                    <mat-error *ngIf="hasError('name', 'maxlength')">Vous avez plus de 60 caractères </mat-error>
-                  </mat-form-field>
-                   
-                  <mat-form-field>
-                    <input matInput [matDatepicker]="picker" placeholder="Choisissez une date de naissance" formControlName="dateOfBirth" id="dateOfBirth" 
-                        readonly (click)="picker.open()">
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
-                   
-                  <mat-form-field>
-                    <input matInput type="text" placeholder="Adresse de l'expert" formControlName="address">
-                    <mat-hint align="end">Pas plus de 100 caractères.</mat-hint>
-                    <mat-error *ngIf="hasError('address', 'required')">L'adresse est requise </mat-error>
-                    <mat-error *ngIf="hasError('address', 'maxlength')">Vous avez plus de 100 caractères</mat-error>
-                  </mat-form-field>
-            </mat-card-content>
-            <mat-card-actions>
-                <button type="button" mat-raised-button color="warn" (click)="onCancel()">Annuler</button>
-                <button mat-raised-button color="primary" [disabled]="!expertForm.valid">Créer</button>
-            </mat-card-actions>
-        </form>
-    </mat-card>
-</section>
+<div style="width: 400px; margin: auto;">
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="contenu">Nom</label>
+                <input type="text" class="form-control" id="contenu" required [(ngModel)]="expert.contenu" name="contenu" />
+            </div>
+
+            <div class="form-group">
+                <label for="priorite">Prenom</label>
+                <input class="form-control" id="priorite" required [(ngModel)]="expert.priorite" name="priorite" />
+            </div>
+
+            <div class="form-group">
+                <label for="reference">Adresse</label>
+                <input class="form-control" id="reference" required [(ngModel)]="expert.reference" name="reference" />
+            </div>
+
+            <button (click)="saveExpert()" class="btn btn-success">Submit</button>
+        </div>
+
+        <div *ngIf="submitted">
+            <h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newExpert()">Add</button>
+        </div>
+    </div>
+</div>

@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Location } from '@angular/common';
-
-interface ExpertForCreation {
-  name: string;
-  dateOfBirth: Date;
-  address: string;
-}
+import { FormGroup } from '@angular/forms';
+import { ExpertService } from 'src/app/components/services/expert.service';
 
 @Component({
   selector: 'app-expert-create',
@@ -15,62 +8,47 @@ interface ExpertForCreation {
   styleUrls: ['./expert-create.component.css']
 })
 
-
 export class ExpertCreateComponent implements OnInit {
+  expert = {
+    contenu: '',
+    priorite: '',
+    reference: '',
+  };
+  submitted = false;
 
   public expertForm: FormGroup;
 
-  constructor(private location: Location) { }
+  constructor(private expertService: ExpertService) { }
 
-  ngOnInit() {
-    this.expertForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      dateOfBirth: new FormControl(new Date()),
-      address: new FormControl('', [Validators.required, Validators.maxLength(100)])
-    });
-  }
-
-  public hasError = (controlName: string, errorName: string) =>{
-    return this.expertForm.controls[controlName].hasError(errorName);
-  }
-
-  public onCancel = () => {
-    this.location.back();
-  }
-
-  public createExpert = (expertFormValue) => {
-    if (this.expertForm.valid) {
-      this.executeExpertCreation(expertFormValue);
-    }
-  }
-
-  private executeExpertCreation = (expertFormValue) => {
-    let expert: ExpertForCreation = {
-      name: expertFormValue.name,
-      dateOfBirth: expertFormValue.dateOfBirth,
-      address: expertFormValue.address
-    }
- 
-    
-  }
-
-  /*
-  import { RepositoryService } from './../../shared/repository.service';
-  import { OwnerForCreation } from '../../_interface/ownerForCreation.model';
-  constructor() { }
-  constructor(private location: Location, private repository: RepositoryService) { }
   ngOnInit(): void {
   }
-  let apiUrl = 'api/owner';
-    this.repository.create(apiUrl, owner)
-      .subscribe(res => {
-        //this is temporary, until we create our dialogs
-        this.location.back();
-      },
-      (error => {
-        //temporary as well
-        this.location.back();
-      })
-    )
-  */
+  
+  saveExpert(): void {
+    const data = {
+      contenu: this.expert.contenu,
+      priorite: this.expert.priorite,
+      reference: this.expert.reference
+    };
+
+    this.expertService.create(data)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.submitted = true;
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  newExpert(): void {
+    this.submitted = false;
+    this.expert = {
+     contenu: '',
+     priorite: '',
+     reference: '',
+    };
+  }
+
+
 }

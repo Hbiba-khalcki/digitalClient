@@ -79,8 +79,8 @@ const routes: Routes = [
 
   {path: 'list-exp', component: ExpertListComponent, canActivate: [AdminGuard]},
   {path: 'create-exp', component: ExpertCreateComponent, canActivate: [AdminGuard]},
-  {path: 'detail-exp', component: ExpertDetailComponent, canActivate: [AdminGuard]},
-  {path: 'edit-exp', component: ExpertEditComponent, canActivate: [AdminGuard]},
+  {path: 'detail-exp/:id', component: ExpertDetailComponent, canActivate: [AdminGuard]},
+  {path: 'edit-exp/:id', component: ExpertEditComponent, canActivate: [AdminGuard]},
   {path: 'delete-exp', component: ExpertDeleteComponent, canActivate: [AdminGuard]},
 
   {path: 'axesevaluation', component: AxesEvaluationComponent},

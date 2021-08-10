@@ -1,79 +1,76 @@
-import {Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {MatTableDataSource} from '@angular/material/table';
-import {MatSort} from '@angular/material/sort';
-import {MatPaginator} from '@angular/material/paginator';
-import {Router, ActivatedRoute} from '@angular/router';
-
-interface Expert {
-  id: string;
-  name: string;
-  dateOfBirth: Date;
-  address: string;
-}
-
+import { ExpertService } from 'src/app/components/services/expert.service';
 
 @Component({
   selector: 'app-expert-list',
   templateUrl: './expert-list.component.html',
   styleUrls: ['./expert-list.component.css']
 })
-export class ExpertListComponent implements OnInit, AfterViewInit {
+export class ExpertListComponent implements OnInit {
 
-  public displayedColumns = ['name', 'dateOfBirth', 'address', 'details', 'update', 'delete'];
-  public dataSource = new MatTableDataSource<Expert>();
+  experts: any;
+  currentExpert = null;
+  currentIndex = -1;
+  contenu = '';
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-
-  constructor() {
-  }
+  constructor(private expertService: ExpertService) { }
 
   ngOnInit(): void {
+    this.retrieveExperts();
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
+  retrieveExperts(): void {
+    this.expertService.getAll()
+      .subscribe(
+        data => {
+          this.experts = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
   }
 
-  public doFilter = (value: string) => {
-    this.dataSource.filter = value.trim().toLocaleLowerCase();
-  };
+  refreshList(): void {
+    this.retrieveExperts();
+    this.currentExpert = null;
+    this.currentIndex = -1;
+  }
 
-  public customSort = (event) => {
-    console.log(event);
-  };
+  setActiveExpert(expert, index): void {
+    this.currentExpert = expert;
+    this.currentIndex = index;
+    
+    console.log( "********");
+    console.log( this.currentExpert._id);
+    console.log( this.currentIndex);
 
-  public redirectToUpdatePage = (id) => {
-    const updateUrl: string = `/expert/update/${id}`;
-    /*this.router.navigate([updateUrl]); */
-  };
+    
+  }
 
+  removeAllExperts(): void {
+    this.expertService.deleteAll()
+      .subscribe(
+        response => {
+          console.log(response);
+          this.retrieveExperts();
+        },
+        error => {
+          console.log(error);
+        });
+  }
 
-  /*
-  import { Expert } from '../../_interface/owner.model';
-  import { RepositoryService } from './../../shared/repository.service';
-
-    constructor(private repoService: RepositoryService) { }
-    ngOnInit() {
-      this.getAllExperts();
-    }
-    public getAllExperts = () => {
-      this.repoService.getData('api/expert')
-        .subscribe(res => {
-          this.dataSource.data = res as Expert[];
-        })
-    }
-    public redirectToDetails = (id: string) => {
-
-    }
-    public redirectToUpdate = (id: string) => {
-
-    }
-    public redirectToDelete = (id: string) => {
-
-    }*/
-
+  searchContenu(): void {
+    this.expertService.findByNom(this.contenu)
+      .subscribe(
+        data => {
+          this.experts = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
 }
+
