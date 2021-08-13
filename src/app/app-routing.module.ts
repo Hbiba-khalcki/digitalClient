@@ -10,7 +10,6 @@ import {Routes, RouterModule} from '@angular/router';
 import {InfoClientComponent} from './components/client/renseignements/info-client/info-client.component';
 import {InfoEntrpTwoComponent} from './components/client/renseignements/info-entrp-two/info-entrp-two.component';
 import {InfoEntrpComponent} from './components/client/renseignements/info-entrp/info-entrp.component';
-import {InfoPersoComponent} from './components/client/renseignements/info-perso/info-perso.component';
 import {OrganisationTypeComponent} from './components/client/renseignements/organisation-type/organisation-type.component';
 import {ScoreComponent} from './components/client/resultat/score/score.component';
 import {HomeComponent} from './components/shared/home/home.component';
@@ -58,7 +57,6 @@ const routes: Routes = [
   {path: 'formulaire', component: FormulaireContactComponent},
   {path: 'ressource', component: RessourcesComponent},
 
-  {path: 'infoperso', component: InfoPersoComponent},
   {path: 'infoentrp', component: InfoEntrpComponent},
   {path: 'infoentrptwo', component: InfoEntrpTwoComponent},
 

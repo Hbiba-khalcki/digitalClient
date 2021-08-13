@@ -33,7 +33,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InfoEntrpComponent } from './components/client/renseignements/info-entrp/info-entrp.component';
-import { InfoPersoComponent } from './components/client/renseignements/info-perso/info-perso.component';
 import { InfoEntrpTwoComponent } from './components/client/renseignements/info-entrp-two/info-entrp-two.component';
 import { ScoreComponent } from './components/client/resultat/score/score.component';
 import { SigninComponent } from './components/shared/login/signin/signin.component';
@@ -103,7 +102,6 @@ import { AxeComponent } from './components/expert/axe/axe.component';
     OprerationProcComponent,
     InfoEntrpComponent,
     InfoEntrpTwoComponent,
-    InfoPersoComponent,
      ScoreComponent,
     SigninComponent,
     SignupComponent, 

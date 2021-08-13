@@ -11,17 +11,17 @@
         <mat-card>
             <div>
                 <div fxLayout="row" fxLayoutAlign="stretch">
-                    <form >
+                    <form  [formGroup]="reponseFormGroup">
                         <div *ngFor="let nb_rep of numbers">
                             <mat-label>Réponse {{nb_rep+1}}</mat-label>
                             <mat-form-field>
                                 <mat-label>Réponse :</mat-label>
-                                <input matInput name="reponse" id="reponse" required>
+                                <input matInput formControlName="contenu"  id="reponse" required>
                             </mat-form-field>
 
                             <mat-form-field>
                                 <mat-label>Pourcentage pour reponse :</mat-label>
-                                <input matInput typt="number" name="pourcentage" id="pourcentage" required>
+                                <input matInput typt="number" formControlName="pourcentage"  id="pourcentage" required>
                             </mat-form-field>
                         </div>
                     </form>
@@ -29,7 +29,7 @@
 
                 <div class="btn-center">
                     <button mat-button class="btn-gray" routerLink="/question"> Précédent </button>
-                    <button mat-raised-button color="primary" routerLink="/recommandation"> Suivant </button>
+                    <button mat-raised-button color="primary" (click)="onSaveReponse()"> Suivant </button>
                 </div>
             </div>
         </mat-card>
