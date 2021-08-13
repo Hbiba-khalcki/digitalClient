@@ -1,6 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 
-import { ExpertService } from 'src/app/components/services/expert.service';
+import { ExpertService } from 'src/app/services/expert.service';
 
 @Component({
   selector: 'app-expert-list',

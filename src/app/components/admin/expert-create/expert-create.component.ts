@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ExpertService } from 'src/app/components/services/expert.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-expert-create',
@@ -9,46 +9,34 @@ import { ExpertService } from 'src/app/components/services/expert.service';
 })
 
 export class ExpertCreateComponent implements OnInit {
-  expert = {
-    contenu: '',
-    priorite: '',
-    reference: '',
+  form: any = {
+    username: null,
+    email: null,
+    password: null, 
+    role: null,
   };
-  submitted = false;
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  public expertForm: FormGroup;
-
-  constructor(private expertService: ExpertService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
-  
-  saveExpert(): void {
-    const data = {
-      contenu: this.expert.contenu,
-      priorite: this.expert.priorite,
-      reference: this.expert.reference
-    };
 
-    this.expertService.create(data)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log(error);
-        });
+  onSubmit(): void {
+    const { username, email, password, role } = this.form;
+    
+    this.authService.register(username, email, password, role).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
-
-  newExpert(): void {
-    this.submitted = false;
-    this.expert = {
-     contenu: '',
-     priorite: '',
-     reference: '',
-    };
-  }
-
-
 }

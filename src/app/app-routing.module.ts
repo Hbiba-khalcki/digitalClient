@@ -47,6 +47,7 @@ import {AdminGuard} from './components/shared/guards/admin.guard';
 import {ClientGuard} from './components/shared/guards/client.guard';
 import {ExpertGuard} from './components/shared/guards/expert.guard';
 import { LogoutComponent } from './components/shared/login/logout/logout.component';
+import { AxeComponent } from './components/expert/axe/axe.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -72,10 +73,11 @@ const routes: Routes = [
   {path: 'cultinnov', component: CultInnovComponent, canActivate: [ClientGuard]},
   {path: 'operationproc', component: OprerationProcComponent, canActivate: [ClientGuard]},
 
-
+   
   {path: 'question', component: QuestionComponent, canActivate: [ExpertGuard]},
   {path: 'recommandation', component: RecommandationComponent, canActivate: [ExpertGuard]},
-  {path: 'reponses', component: ReponsesComponent, canActivate: [ExpertGuard]},
+  {path: 'reponse/:id', component: ReponsesComponent, canActivate: [ExpertGuard]},
+  {path: 'axe', component: AxeComponent, canActivate: [ExpertGuard]},
 
   {path: 'list-exp', component: ExpertListComponent, canActivate: [AdminGuard]},
   {path: 'create-exp', component: ExpertCreateComponent, canActivate: [AdminGuard]},
@@ -100,8 +102,6 @@ const routes: Routes = [
   {path: 'resCul', component: RecsCultureComponent},
   {path: 'resGen', component: RecsGeneralComponent},
   {path: 'logout', component: LogoutComponent},
-
-
 ];
 
 @NgModule({

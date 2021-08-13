@@ -1,102 +1,31 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<div style="height: 100px;">
+<div fxLayout="row wrap">
 
-    <mat-card class="card">
-
-        <div class="w3-sidebar w3-bar-block w3-border-right" style="width:15%; height:73%;">
-            <a href="#" class="w3-bar-item w3-button">Par thème</a>
-            <a href="#" class="w3-bar-item w3-button">Par industrie</a>
-            <a href="#" class="w3-bar-item w3-button">Dossiers</a>
-        </div>
-        <div style="margin-left: 160px ;">
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
             <div>
-                <h1>Stratégie et Leadership</h1>
-                <br>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/6.PNG" width="280" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
-
-                    </div>
-
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form [formGroup]="ressourceFormGroup">
+                        <mat-card *ngFor="let ressource of ressources">
+                        <h1 *ngFor="let axe of axes">Axe : Stratégie et Leadership {{axe.nameAxe}}</h1>
+                        <br>
+                        <div class="container">
+                            <a href="https://bridgr.co" target="_blank">
+                                <img src="/assets/Stra/6.PNG" width="280" height="220"> </a>
+                            <div class="text">
+                                <p>{{ressource.secteur}}</p>
+                            </div>
+                        </div>
+                    </mat-card>
+                    </form>
                 </div>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/5.PNG" width="280" height="220"> </a>
-                    <div class="text">
-                        <p>5 conseils pour mieux gérer la croissance de votre startup</p>
 
-                    </div>
-
+                <div class="btn-center">
+                    <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
                 </div>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/2.png" width="280" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
 
-                    </div>
-
-                </div>
             </div>
+        </mat-card>
+    </div>
 
-            <div>
-                <h1>Technologies et services</h1>
-                <br>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/2.png" width="300" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
 
-                    </div>
-
-                </div>
-            </div>
-
-            <div>
-                <h1>Culture et Innovation</h1>
-                <br>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/2.png" width="300" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div>
-                <h1>Opérations et processus</h1>
-                <br>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/2.png" width="300" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
-
-                    </div>
-
-                </div>
-            </div>
-
-            <div>
-                <h1>Infrastructure informatique et données</h1>
-                <br>
-                <div class="container">
-                    <a href="https://bridgr.co" target="_blank">
-                        <img src="/assets/Stra/2.png" width="300" height="220"> </a>
-                    <div class="text">
-                        <p>Le secteur de la consultation n’y échappe pas !</p>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </mat-card>
 </div>
