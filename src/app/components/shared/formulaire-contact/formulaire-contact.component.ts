@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./formulaire-contact.component.css']
 })
 
-
-
 export class FormulaireContactComponent implements OnInit {
   contactFormGroup: FormGroup;
   submitted: boolean = false;
