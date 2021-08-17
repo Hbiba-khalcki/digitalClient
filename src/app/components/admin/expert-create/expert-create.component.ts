@@ -25,6 +25,7 @@ export class ExpertCreateComponent implements OnInit {
   }
 
   onSubmit(): void {
+    //console.log(this.form)
     const { username, email, password, role } = this.form;
     
     this.authService.register(username, email, password, role).subscribe(
