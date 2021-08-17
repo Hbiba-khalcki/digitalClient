@@ -6,7 +6,7 @@
             <h1> <strong> Formulaire </strong> de contact.</h1>
         </div>
 
-        <form class="form">
+        <form class="form" [formGroup]="contactFormGroup">
             <div fxLayout="row" fxLayoutAlign="stretch">
  
                     <mat-form-field appearance="outline">
@@ -14,7 +14,7 @@
                         <mat-label class="my-label">Subject :</mat-label>
                         <br>
                         <div div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="Subject" type="text" required [(ngModel)]="contact.subject">
+                            <input matInput placeholder="Subject" type="text" required formControlName="subject">
                             <mat-icon> perm_identity </mat-icon>
                         </div>
                     </mat-form-field>
@@ -28,7 +28,7 @@
                         <mat-label class="my-label">email :</mat-label>
                         <br>
                         <div fxLayout="row" fxLayoutAlign="space-between none">
-                            <input matInput placeholder="email" name="email" required [(ngModel)]="contact.email">
+                            <input matInput placeholder="email" name="email" required formControlName="email" >
                             <mat-icon> mail_outline</mat-icon>
                         </div>
                     </mat-form-field>   
@@ -40,7 +40,7 @@
                     <mat-label class="my-label">Votre demande :</mat-label>
                     <br>
                     <div div fxLayout="row" fxLayoutAlign="space-between none">
-                        <input matInput placeholder="message" name="msg" required [(ngModel)]="contact.message">
+                        <input matInput placeholder="message" name="msg" required formControlName="message" >
                         <mat-icon> chat_bubble_outline</mat-icon>
                     </div>
                 </mat-form-field>  <br><br>

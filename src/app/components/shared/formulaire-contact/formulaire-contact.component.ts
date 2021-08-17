@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from 'src/app/services/contact.service';
 
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-formulaire-contact',
@@ -11,21 +14,28 @@ import { ContactService } from 'src/app/services/contact.service';
 
 
 export class FormulaireContactComponent implements OnInit {
-
-  contact: { subject: string, email: string, message:string } = {
-    subject: '',
-    email: '',
-    message: ''
-  };  
-  constructor(private contactService :ContactService) {}
-  sendmsg(){
-      this.contactService.sendemail(this.contact).subscribe(res=>{
-        console.log("sent",this.contact,res)
-      })
-    
-    }
+  contactFormGroup: FormGroup;
+  submitted: boolean = false;
+ 
+  constructor(private contactService :ContactService,
+    private fb: FormBuilder,
+    private router: Router,) {}
+ 
   ngOnInit() {
+    this.contactFormGroup = this.fb.group({
+      subject: ["", Validators.required],
+      email: ["", Validators.required],
+      message: ["", Validators.required],
+    });
   }
+  sendmsg(){
+    this.submitted = true;
+    if (this.contactFormGroup?.invalid) return;
+    this.contactService.sendemail(this.contactFormGroup?.value).subscribe(res=>{
+      console.log("sent",this.contactFormGroup,res)
+      this.contactFormGroup.reset();
+    })
+   
 
-
+}
 }
