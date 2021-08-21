@@ -1,0 +1,5 @@
+ interface Entreprise {
+     nom:string;
+     
+
+}

@@ -16,20 +16,20 @@
           * Reprenez la saisie de vos réponses en cas d'interruption.<br>
         </p>
         <div class="form-container">
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" >
             <mat-label>Nom : </mat-label>
-            <input matInput type="text" placeholder="Nom">
+            <input matInput type="text" placeholder="Nom" [(ngModel)]="form.nom">
           </mat-form-field>
           <br>
           <mat-form-field appearance="outline">
             <mat-label>Prénom :</mat-label>
-            <input matInput type="text" placeholder="Prénom">
+            <input matInput type="text" placeholder="Prénom" [(ngModel)]="form.prenom">
           </mat-form-field>
           <br>
           <br>
           <mat-form-field appearance="outline">
             <mat-label>role dans l'entreprise :</mat-label>
-            <input matInput type="text" placeholder="role ..">
+            <input matInput type="text" placeholder="role .." [(ngModel)]="form.roleEntr">
           </mat-form-field>
         </div>
         <!-- ajout role client dans l'entreprise -->
@@ -38,7 +38,7 @@
 
         <div class="btn-center">
           <button mat-button class="btn-gray" routerLink="/typeorganisation"> Précédent </button>
-          <button mat-raised-button color="primary" routerLink="/straLead"> Suivant </button>
+          <button mat-raised-button color="primary"  routerLink="/straLead"> Suivant </button>
         </div>
 
       </div>
