@@ -17,44 +17,32 @@
                 <div fxFlex.lt-md="80%" class="qst"> Informations sur votre entreprise (1)</div>
         </div>
         <div>
-            <div class="form-container">
+            <form [formGroup]="entrFormGroup">
                     <mat-form-field appearance="outline">
                         <mat-label>Nom de la compagnie </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text">
+                        <input matInput type="text"  formControlName="nom" >
                     </mat-form-field>
                   
                     <mat-form-field appearance="outline">
                         <mat-label>Site Web d'entreprise </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text">
+                        <input matInput type="text"  formControlName="siteWeb" >
                     </mat-form-field>
                   
                     <mat-form-field appearance="outline">
                         <mat-label>Adresse de la société </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text">
+                        <input matInput type="text" formControlName="adresse">
                     </mat-form-field>
                  
-                <mat-form-field appearance="fill">
-                        <mat-label>Votre rôle au sein de l'entreprise </mat-label>
-                        <mat-label class="obligation">*</mat-label>
-                        <mat-select>
-                            <mat-option value="employe">Employé</mat-option>
-                            <mat-option value="option2">Directeur gestionnaire</mat-option>
-                            <mat-option value="employe">Vice-président (VP) / Chef X officier (CxO)</mat-option>
-                            <mat-option value="employe">Président et PDG</mat-option>
-                            <mat-option value="employe">Propriétaire</mat-option>
-                            <mat-option value="employe">Conseil d'administration</mat-option>
-                            <mat-option value="employe">Autre</mat-option>
-                        </mat-select>
-                </mat-form-field> 
+               
  
               
            
                 <mat-form-field appearance="fill">
                     <mat-label>Dans quelle industrie etes-vous ?</mat-label>
-                    <mat-select>
+                    <mat-select formControlName="secteurActivite">
                         <mat-option value="option1">Académie</mat-option>
                         <mat-option value="option2">Administration gouvernementale</mat-option>
                         <mat-option value="option2">Agriculture</mat-option>
@@ -139,7 +127,7 @@
                         <mat-option value="option2">Web Santé et forme</mat-option>
                     </mat-select>
                 </mat-form-field>
-            </div>
+            </form>
         </div>
 
         <div class="btn-center" fxLayout="row">
@@ -148,7 +136,7 @@
             </div>
             
             <button mat-fab color="'primary'" >
-                <mat-icon  routerLink="/infoentrptwo">trending_flat</mat-icon>
+                <mat-icon  (click)="onSaveEntreprise()">trending_flat</mat-icon>
             </button>
         </div>
  </mat-card>

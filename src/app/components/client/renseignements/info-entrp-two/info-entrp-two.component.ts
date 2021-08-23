@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-info-entrp-two',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./info-entrp-two.component.css']
 })
 export class InfoEntrpTwoComponent implements OnInit {
-
+  @Input('entreprise')
+  entreprise: any;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-info-client',
@@ -11,36 +11,41 @@ export class InfoClientComponent implements OnInit {
   form: any = {
     nom: null,
     prenom: null,
-    roleEntr: null, 
+    roleentr: null,
   };
 
   isSuccessful = false;
 
   errorMessage = '';
-  constructor(private authService:AuthService,
-    private router:Router) { }
 
-  ngOnInit(): void {
+  constructor(private authService: AuthService,
+              private router: Router) {
   }
 
- /* onUpdateProfil():void{
-    const {nom, prenom, roleEntr} = this.form;
-    this.authService.updateProfil(nom, prenom, roleEntr).subscribe(
+  ngOnInit(): void {
+    this.authService.getUser().subscribe((res: any) => {
+      this.form.nom = res.nom ? res.nom : '';
+      this.form.prenom = res.prenom ? res.prenom : '';
+      this.form.roleentr = res.roleentr ? res.roleentr : '';
+    });
+  }
+
+  onUpdateProfil(): void {
+    const {nom, prenom, roleentr} = this.form;
+    this.authService.updateProfil(nom, prenom, roleentr).subscribe(
       data => {
-        console.log(data);
         this.isSuccessful = true;
-        
+
       },
-  
-    err => {
-      this.errorMessage = err.error.message;
- 
-    } );
-    //this.router.navigateByUrl("/straLead");
 
- 
+      err => {
+        this.errorMessage = err.error.message;
 
-  }*/
+      });
+  this.router.navigateByUrl("/straLead");
+
+
+  }
 
 }
 

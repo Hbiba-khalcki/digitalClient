@@ -27,18 +27,28 @@
           </mat-form-field>
           <br>
           <br>
-          <mat-form-field appearance="outline">
-            <mat-label>role dans l'entreprise :</mat-label>
-            <input matInput type="text" placeholder="role .." [(ngModel)]="form.roleEntr">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Votre rôle au sein de l'entreprise </mat-label>
+            <mat-label class="obligation">*</mat-label>
+            <mat-select [(ngModel)]="form.roleEntr">
+              <mat-option value="Employé">Employé</mat-option>
+              <mat-option value="Directeur gestionnaire">Directeur gestionnaire</mat-option>
+              <mat-option value="Vice-président (VP) / Chef X officier (CxO)">Vice-président (VP) / Chef X officier (CxO)</mat-option>
+              <mat-option value="Président et PDG">Président et PDG</mat-option>
+              <mat-option value="Propriétaire">Propriétaire</mat-option>
+              <mat-option value="Conseil d'administration">Conseil d'administration</mat-option>
+              <mat-option value="Autre">Autre</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <!-- ajout role client dans l'entreprise -->
 
-       
+
 
         <div class="btn-center">
           <button mat-button class="btn-gray" routerLink="/typeorganisation"> Précédent </button>
-          <button mat-raised-button color="primary"  routerLink="/straLead"> Suivant </button>
+          <button mat-raised-button color="primary"  (click)="onUpdateProfil()"> Suivant </button>
         </div>
 
       </div>
