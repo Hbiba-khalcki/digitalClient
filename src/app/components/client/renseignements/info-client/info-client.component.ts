@@ -11,7 +11,7 @@ export class InfoClientComponent implements OnInit {
   form: any = {
     nom: null,
     prenom: null,
-    roleentr: null,
+    roleentrp: null,
   };
 
   isSuccessful = false;
@@ -26,13 +26,13 @@ export class InfoClientComponent implements OnInit {
     this.authService.getUser().subscribe((res: any) => {
       this.form.nom = res.nom ? res.nom : '';
       this.form.prenom = res.prenom ? res.prenom : '';
-      this.form.roleentr = res.roleentr ? res.roleentr : '';
+      this.form.roleentrp = res.roleentrp ? res.roleentrp : '';
     });
   }
 
   onUpdateProfil(): void {
-    const {nom, prenom, roleentr} = this.form;
-    this.authService.updateProfil(nom, prenom, roleentr).subscribe(
+    const {nom, prenom, roleentrp} = this.form;
+    this.authService.updateProfil(nom, prenom, roleentrp).subscribe(
       data => {
         this.isSuccessful = true;
 
@@ -41,8 +41,8 @@ export class InfoClientComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
 
-      });
-  this.router.navigateByUrl("/straLead");
+      }); 
+      this.router.navigateByUrl("/straLead");
 
 
   }

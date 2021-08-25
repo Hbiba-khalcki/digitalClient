@@ -44,7 +44,7 @@ export class AuthService {
     }, httpOptions);
   }
 
-  updateProfil(nom: string, prenom: string, roleEntr: string) {
+  updateProfil(nom: string, prenom: string, roleentrp: string) {
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -56,7 +56,7 @@ export class AuthService {
     return this.http.put(AUTH_API + 'editProfile', {
       nom,
       prenom,
-      roleEntr
+      roleentrp
     }, httpOptions);
   }
 
