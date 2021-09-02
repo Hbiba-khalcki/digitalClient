@@ -32,18 +32,6 @@
 .progbar{
   padding: 15px;
 }
- .numQst{
-      background-color:blue;
-      height: 40px;
-      width: 40px;
-      max-height: 40px !important;
-      max-width: 40px !important;
-      border-radius: 50%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
   .num{
     color: white;
     font-size:14px;
@@ -57,6 +45,19 @@
   .partOne{
     margin: 20px;
   }
+  
+::ng-deep .axe-1.numQst{
+  background-color:blue;
+  height: 40px;
+  width: 40px;
+  max-height: 40px !important;
+  max-width: 40px !important;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
     background-color: blue !important;
   }
@@ -65,10 +66,10 @@
     background-color: blue !important;   
   }
   
-  ::ng-deep.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
    border-color:blue !important; 
   }
-  .btn{
+  .axe-1.btn{
     background-color: blue !important;
   }
 

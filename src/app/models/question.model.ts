@@ -6,5 +6,4 @@ export interface Question{
     pourcentage:string;
     axe:Axe;
     nbrReponse:number;
-  
 }

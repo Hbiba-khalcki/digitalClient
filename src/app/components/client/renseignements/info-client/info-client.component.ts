@@ -35,14 +35,13 @@ export class InfoClientComponent implements OnInit {
     this.authService.updateProfil(nom, prenom, roleentrp).subscribe(
       data => {
         this.isSuccessful = true;
-
+        this.router.navigate(["questions",1]);
       },
 
       err => {
         this.errorMessage = err.error.message;
 
       }); 
-      this.router.navigateByUrl("/straLead");
 
 
   }

@@ -65,7 +65,7 @@ const routes: Routes = [
 
   {path: 'score', component: ScoreComponent},
 
-  {path: 'straLead', component: StrategieLeadershipComponent, canActivate: [ClientGuard]},
+  {path: 'questions/:order', component: StrategieLeadershipComponent, canActivate: [ClientGuard]},
   {path: 'infrainfo', component: InfraInfoComponent, canActivate: [ClientGuard]},
   {path: 'techservice', component: TechServiceComponent, canActivate: [ClientGuard]},
   {path: 'cultinnov', component: CultInnovComponent, canActivate: [ClientGuard]},
