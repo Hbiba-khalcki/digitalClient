@@ -38,16 +38,18 @@ export class ReponsesComponent implements OnInit {
         this.reponses = Array(data.nbrReponse)
           .fill({
             contenu:"",
-            pourcentage:"",
+            pourcentage:null,
             qstId:params['id']
           })
-          .map((x, i) => (
-            {
+          .map((x, i) => {
+            const r:Reponse = {
               contenu:"",
-              pourcentage:"",
+              pourcentage:null,
               qstId:params['id']
             }
-          ));
+            return r
+          }
+          );
         console.log(this.numbers);
       });
       

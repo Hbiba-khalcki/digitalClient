@@ -17,23 +17,23 @@
                 <div fxFlex.lt-md="80%" class="qst"> Informations sur votre entreprise (1)</div>
         </div>
         <div>
-            <form [formGroup]="entrFormGroup">
+            <form >
                     <mat-form-field appearance="outline">
                         <mat-label>Nom de la compagnie </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text"  formControlName="nom" >
+                        <input matInput type="text"  name="nom" [(ngModel)]="entreprise.nom">
                     </mat-form-field>
                   
                     <mat-form-field appearance="outline">
                         <mat-label>Site Web d'entreprise </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text"  formControlName="siteWeb" >
+                        <input matInput type="text"  name="siteWeb" [(ngModel)]="entreprise.siteWeb">
                     </mat-form-field>
                   
                     <mat-form-field appearance="outline">
                         <mat-label>Adresse de la société </mat-label>
                         <mat-label class="obligation">*</mat-label>
-                        <input matInput type="text" formControlName="adresse">
+                        <input matInput type="text" name="adresse" [(ngModel)]="entreprise.adresse">
                     </mat-form-field>
                  
                
@@ -42,7 +42,7 @@
            
                 <mat-form-field appearance="fill">
                     <mat-label>Dans quelle industrie etes-vous ?</mat-label>
-                    <mat-select formControlName="secteurActivite">
+                    <mat-select name="secteurActivite" [(ngModel)]="entreprise.secteurActivite">
                         <mat-option value="option1">Académie</mat-option>
                         <mat-option value="option2">Administration gouvernementale</mat-option>
                         <mat-option value="option2">Agriculture</mat-option>

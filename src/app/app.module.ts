@@ -1,6 +1,4 @@
-import { OprerationProcComponent } from './components/client/questions/operation-processus/opreration-proc/opreration-proc.component';
-import { TechServiceComponent } from './components/client/questions/technologies-services/tech-service/tech-service.component';
-import { InfraInfoComponent } from './components/client/questions/infrastructure-informatique/infra-info/infra-info.component';
+
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,7 +37,6 @@ import { SigninComponent } from './components/shared/login/signin/signin.compone
 import { SignupComponent } from './components/shared/login/signup/signup.component';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { CultInnovComponent } from './components/client/questions/culture-innovation/cult-innov/cult-innov.component';
 import { ReponsesComponent } from './components/expert/reponses/reponses.component';
 
 import { MatSortModule } from '@angular/material/sort';
@@ -96,10 +93,6 @@ import { AxeComponent } from './components/expert/axe/axe.component';
     RecommandationComponent,
 
     StrategieLeadershipComponent, 
-    InfraInfoComponent,
-    TechServiceComponent,
-    CultInnovComponent,
-    OprerationProcComponent,
     InfoEntrpComponent,
     InfoEntrpTwoComponent,
      ScoreComponent,

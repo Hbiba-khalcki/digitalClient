@@ -17,11 +17,11 @@
                 <div fxFlex.lt-md="80%" class="qst"> Informations sur votre entreprise (2) </div>
             </div>
             <div class="form-container">
-                <form [formGroup]="entrFormGroup">
+                <form>
                 <mat-form-field appearance="fill">
                     <mat-label>Dans quel type d'entreprise êtes-vous? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <mat-select formControlName="type">
+                    <mat-select name="type" [(ngModel)]="entreprise.type">
                         <mat-option value="option1">Société</mat-option>
                         <mat-option value="option2">Coopérative</mat-option>
                         <mat-option value="option3">Institution gouvernementale</mat-option>
@@ -34,7 +34,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Est-ce une entreprise familiale? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <mat-select formControlName="familie_ent">
+                    <mat-select name="familie_ent" [(ngModel)]="entreprise.familie_ent">
                         <mat-option value="oui">Oui</mat-option>
                         <mat-option value="non">Non</mat-option>
                     </mat-select>
@@ -43,13 +43,13 @@
                 <mat-form-field appearance="outline">
                     <mat-label>En quelle année l'entreprise a-t-elle été fondée? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <input matInput type="text" placeholder="annee_entreprise" formControlName="annee_const">
+                    <input matInput type="text"  name="annee_const" [(ngModel)]="entreprise.annee_const">
                   </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>À quel stade de développement l'entreprise est-elle? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <mat-select formControlName="stade_developpement">
+                    <mat-select name="stade_developpement" [(ngModel)]="entreprise.stade_developpement" >
                         <mat-option value="option1">Start-up</mat-option>
                         <mat-option value="option2">Croissance</mat-option>
                         <mat-option value="option3">Établi</mat-option>
@@ -63,7 +63,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Quel est le nombre d'employés? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <mat-select formControlName="nb_employe">
+                    <mat-select name="nb_employe" [(ngModel)]="entreprise.nb_employe">
                         <mat-option value="1">Individu</mat-option>
                         <mat-option value="2">1-10</mat-option>
                         <mat-option value="3">11-50</mat-option>
@@ -77,7 +77,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Quel est le revenu annuel ($)? </mat-label>
                     <mat-label class="obligation">*</mat-label>
-                    <mat-select formControlName="revenu">
+                    <mat-select name="revenu" [(ngModel)]="entreprise.revenu">
                         <mat-option value="1">Moins de 100k</mat-option>
                         <mat-option value="2">100k et 1M</mat-option>
                         <mat-option value="3">Entre 1M et 8M</mat-option>

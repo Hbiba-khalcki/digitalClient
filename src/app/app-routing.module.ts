@@ -1,9 +1,6 @@
 import {ResPerInfrastructureComponent} from './components/client/resultat/ressourcespersonnalisees/res-per-infrastructure/res-per-infrastructure.component';
-
-import {OprerationProcComponent} from './components/client/questions/operation-processus/opreration-proc/opreration-proc.component';
 import {RessourcesComponent} from './components/shared/ressources/ressources.component';
 import {FormulaireContactComponent} from './components/shared/formulaire-contact/formulaire-contact.component';
-
 import {AproposComponent} from './components/shared/apropos/apropos.component';
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
@@ -17,9 +14,6 @@ import {QuestionComponent} from './components/expert/question/question.component
 import {RecommandationComponent} from './components/expert/recommandation/recommandation.component';
 import {SigninComponent} from './components/shared/login/signin/signin.component';
 import {SignupComponent} from './components/shared/login/signup/signup.component';
-import {InfraInfoComponent} from './components/client/questions/infrastructure-informatique/infra-info/infra-info.component';
-import {TechServiceComponent} from './components/client/questions/technologies-services/tech-service/tech-service.component';
-import {CultInnovComponent} from './components/client/questions/culture-innovation/cult-innov/cult-innov.component';
 import {ReponsesComponent} from './components/expert/reponses/reponses.component';
 import {ExpertListComponent} from './components/admin/expert-list/expert-list.component';
 import {ExpertCreateComponent} from './components/admin/expert-create/expert-create.component';
@@ -29,7 +23,6 @@ import {ExpertDeleteComponent} from './components/admin/expert-delete/expert-del
 import {AxesEvaluationComponent} from './components/client/resultat/axes-evaluation/axes-evaluation.component';
 import {EvolutionComponent} from './components/client/resultat/evolution/evolution.component';
 import {ComparaisonComponent} from './components/client/resultat/comparaison/comparaison.component';
-
 import {ResPerStrategieComponent} from './components/client/resultat/ressourcespersonnalisees/res-per-strategie/res-per-strategie.component';
 import {ResPerOperationComponent} from './components/client/resultat/ressourcespersonnalisees/res-per-operation/res-per-operation.component';
 import {ResPerCultureComponent} from './components/client/resultat/ressourcespersonnalisees/res-per-culture/res-per-culture.component';
@@ -66,10 +59,6 @@ const routes: Routes = [
   {path: 'score', component: ScoreComponent},
 
   {path: 'questions/:order', component: StrategieLeadershipComponent, canActivate: [ClientGuard]},
-  {path: 'infrainfo', component: InfraInfoComponent, canActivate: [ClientGuard]},
-  {path: 'techservice', component: TechServiceComponent, canActivate: [ClientGuard]},
-  {path: 'cultinnov', component: CultInnovComponent, canActivate: [ClientGuard]},
-  {path: 'operationproc', component: OprerationProcComponent, canActivate: [ClientGuard]},
 
    
   {path: 'question', component: QuestionComponent, canActivate: [ExpertGuard]},

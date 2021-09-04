@@ -10,33 +10,32 @@ import { EntrepriseService } from 'src/app/services/entreprise.service';
 })
 export class InfoEntrpTwoComponent implements OnInit { 
 
-  entrFormGroup:FormGroup;
+  entreprise:any={
+    type:"",
+    familie_ent:"",
+    annee_const:"",
+    nb_employe:"",
+    revenu:""
+  };
+  
   submitted:boolean=false;
 
   constructor(private router:Router,
-             private fb:FormBuilder,
+           
               private entrepriseService: EntrepriseService,
     )
    {}
+   ngOnInit(): void {
+    this.entrepriseService.getEntreprise().subscribe((data:any)=>{
+      this.entreprise = data;
+    });
 
-  ngOnInit(): void {
-  
-    this.entrFormGroup= this.fb.group({
-      type:["",Validators.required],
-      familie_ent:["",Validators.required],
-      annee_const:["",Validators.required],
-      stade_developpement:["",Validators.required],
-      nb_employe:[Validators.required],
-      revenu:["",Validators.required],
-  })
 }
   onSaveEntreprise(){
     this.submitted=true;
-    if(this.entrFormGroup?.invalid) return;
-    console.log("",this.entrFormGroup?.value)
-    this.entrepriseService.saveEntreprise(this.entrFormGroup?.value).subscribe(date => {
+    this.entrepriseService.saveEntreprise(this.entreprise).subscribe(date => {
       alert("succes save")
-      this.router.navigateByUrl("/score")
+      this.router.navigateByUrl("/infoentrptwo")
     })
  
 }

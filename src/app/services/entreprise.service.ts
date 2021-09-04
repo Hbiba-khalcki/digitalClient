@@ -12,7 +12,7 @@ import { TokenStorageService } from "./token-storage.service";
 export class EntrepriseService{
     constructor(private http:HttpClient, private tokenStorageService: TokenStorageService){}
 
-saveEntreprise(entreprise){{
+saveEntreprise(entreprise){
     let host = environment.host;
     
     const httpOptions = {
@@ -23,13 +23,18 @@ saveEntreprise(entreprise){{
       };
   
       return this.http.put(host +"/entreprise",entreprise , httpOptions);
-}
-
-/*getEntreprise(id:number|null):Observable<Entreprise>{
+    }
+getEntreprise():Observable<Entreprise>{
      let host = environment.host;
-     return this.http.get<Entreprise>(host+"/entreprise/"+id);
- }*/
+     const httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + this.tokenStorageService.getToken(),
+        'Content-Type': 'application/json'
+      })
+    };
+     return this.http.get<Entreprise>(host+"/entreprise/single",httpOptions);
+ }
 
 
 
-}}
+}
