@@ -25,7 +25,7 @@
                 <div  fxLayout="row">
                     <div fxFlex.lt-md="20%" >
                         <mat-radio-group  [(ngModel)]="clientreponse.idReponse">
-                            <mat-radio-button *ngFor="let reponse of reponses" [value]="reponse.id" >{{reponse.contenu}} </mat-radio-button>
+                            <mat-radio-button class="axe-{{axecount}} mat-radio-button" *ngFor="let reponse of reponses" [value]="reponse.id" >{{reponse.contenu}} </mat-radio-button>
                         </mat-radio-group> 
                     </div>
                    
@@ -33,7 +33,7 @@
             </mat-card>     
         </div>
         <div class="progbar"> 
-            <mat-progress-bar mode="determinate" value="{{100*order/total}}"></mat-progress-bar>
+            <mat-progress-bar class="axe-{{axecount}}" mode="determinate" value="{{100*order/total}}"></mat-progress-bar>
         </div>
         <div class="btn-center">
              <button mat-button class="btn-gray" (click)="onBack()"> Précédent </button>

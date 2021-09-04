@@ -1,5 +1,5 @@
 export interface Reponse{
-    id:number;
+    id?:number;
     contenu:string;
     pourcentage:number;
     qstId:string;

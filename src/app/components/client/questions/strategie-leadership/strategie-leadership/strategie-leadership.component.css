@@ -1,53 +1,53 @@
 .btn-center {
-    text-align: center;
-  }
+  text-align: center;
+}
 .btn-gray {
-    background-color: rgba(0, 0, 0, 0.12) !important;
-    margin-right: 15px;
-  }
-.col-padding{
-      padding: 50px;
-  }
-.titre{
-      color: #2F80ED;
-      font-size: 16px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-  }
-.text-center{
-      text-align: center;
-  }
-.text-bold{
-      font-weight:500;
-  }
-.mh-100{
-    max-width: 100%;
-  }
-.rep{
-  background-color: #F2F2F2;
+  background-color: rgba(0, 0, 0, 0.12) !important;
+  margin-right: 15px;
+}
+.col-padding {
+  padding: 50px;
+}
+.titre {
+  color: #2f80ed;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.text-center {
+  text-align: center;
+}
+.text-bold {
+  font-weight: 500;
+}
+.mh-100 {
+  max-width: 100%;
+}
+.rep {
+  background-color: #f2f2f2;
   margin-bottom: 10px;
   margin-left: 65px;
   margin-right: 65px;
 }
-.progbar{
+.progbar {
   padding: 15px;
 }
-  .num{
-    color: white;
-    font-size:14px;
-    font-weight:500;
-  }
-  .qst{
-    margin-left: 26px;
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .partOne{
-    margin: 20px;
-  }
-  
-::ng-deep .axe-1.numQst{
-  background-color:blue;
+.num {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+.axe-1.qst {
+  margin-left: 26px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.partOne {
+  margin: 20px;
+}
+
+.numQst {
+  background-color: blue;
   height: 40px;
   width: 40px;
   max-height: 40px !important;
@@ -58,30 +58,55 @@
   align-items: center;
   justify-content: center;
 }
-  ::ng-deep .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
-    background-color: blue !important;
-  }
-  
-  ::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
-    background-color: blue !important;   
-  }
-  
-  ::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
-   border-color:blue !important; 
-  }
-  .axe-1.btn{
-    background-color: blue !important;
-  }
 
-  ::ng-deep .mat-progress-bar-fill::after {
-    background-color: blue !important;
-
+.mat-progress-bar-buffer {
+  background: #e4e8eb;
 }
 
-::ng-deep .mat-progress-bar-buffer {
-    background: #E4E8EB;
+.mat-progress-bar {
+  border-radius: 2px;
+}
+/* 1 */
+
+.axe-1.numQst {
+  background-color: blue;
+}
+.axe-1.btn {
+  background-color: blue !important;
 }
 
-::ng-deep .mat-progress-bar {
-    border-radius: 2px;
+/* 2 */
+
+.axe-2.numQst {
+  background-color: #c70039;
+}
+.axe-2.btn {
+  background-color: #c70039 !important;
+}
+
+/* 3 */
+
+.axe-3.numQst {
+  background-color: #e6004c;
+}
+.axe-3.btn {
+  background-color: #e6004c !important;
+}
+
+/* 4 */
+
+.axe-4.numQst {
+  background-color: #c705b3;
+}
+.axe-4.btn {
+  background-color: #c705b3 !important;
+}
+
+/* 5 */
+
+.axe-5.numQst {
+  background-color: #006600;
+}
+.axe-5.btn {
+  background-color: #006600 !important;
 }
