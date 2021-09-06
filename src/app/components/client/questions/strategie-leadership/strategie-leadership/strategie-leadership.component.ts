@@ -39,12 +39,16 @@ export class StrategieLeadershipComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
+      // get all questions
       this.qstService.getAllQuestions().subscribe((data: any) => {
+        // nbr de questions
         this.total = data.length;
+        // order = numero de question 
         this.order = parseInt(params['order']);
         this.question = data[parseInt(params['order']) - 1];
         if (this.question.axe) {
           this.axe = this.question.axe.nameAxe.toLowerCase();
+          // get deg dimp d'axe
           this.axecount = this.question.axe.degreImportance;
           switch (this.axe) {
             case 'strategie leadership':
@@ -84,6 +88,7 @@ export class StrategieLeadershipComponent implements OnInit {
       });
     });
   }
+  // save client reponse 
   onSubmit() {
     this.reponseClientService
       .save(this.clientreponse, this.question.id)
