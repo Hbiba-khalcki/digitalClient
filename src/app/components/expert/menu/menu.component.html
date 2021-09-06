@@ -1,0 +1,33 @@
+<div class="full-width-page">
+    <div class="bloc">
+        <h1 style="margin-top: -20px;">Quel choix vous voulez choisir?</h1>
+
+        <div class="imgbloc" fxLayoutAlign="espace autour du centre">          
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <strong class="titre" > Axes </strong>
+                <a [routerLink]="['/ListAxe']"><img src="/assets/MenuAffichage/menyAxes.jpg" alt="img1" class="img"></a>       
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <strong class="titre"> Questions </strong>
+                <a [routerLink]="['/ListQuest']"><img src="/assets/MenuAffichage/menyQustion.jpg" alt="img1" class="img"></a>       
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <strong class="titre"> Reponses </strong>
+                <a [routerLink]="['/ListRep']"><img src="/assets/MenuAffichage/menyReponse.jpg" alt="img1" class="img"></a>  
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <strong class="titre"> Recommandations </strong>
+                <a [routerLink]="['/ListRec']"><img src="/assets/MenuAffichage/menyRecommandation.jpg" alt="img1" class="img"></a>   
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-around center" >
+                <strong class="titre"> Ressources </strong>
+                <a [routerLink]="['/ListRes']"><img src="/assets/MenuAffichage/menyRessources.jpg" alt="img1" class="img"></a>  
+            </div>
+        </div>
+    </div>
+    <div class="btnbloc">
+        <button mat-button class="btn-gray" routerLink="/home"> Précédent </button>
+        <button mat-raised-button color="primary" routerLink="/ListQuest"> Suivant </button>
+    </div>
+
+</div>

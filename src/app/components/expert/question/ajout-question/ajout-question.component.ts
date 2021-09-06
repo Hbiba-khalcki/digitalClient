@@ -5,14 +5,12 @@ import { Axe } from 'src/app/models/axe.model';
 import { AxeService } from 'src/app/services/axe.service';
 import { QuestionService } from 'src/app/services/question.service';
 
-
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-ajout-question',
+  templateUrl: './ajout-question.component.html',
+  styleUrls: ['./ajout-question.component.css']
 })
-
-export class QuestionComponent implements OnInit {
+export class AjoutQuestionComponent implements OnInit {
   questionFormGroup: FormGroup;
   submitted: boolean = false;
   axes: Axe[] = [];
@@ -46,7 +44,7 @@ export class QuestionComponent implements OnInit {
     this.questionService.saveQuestion(this.questionFormGroup?.value).subscribe((data: any) => {
       console.log("question_id", data)
       alert("succes save")
-      this.router.navigate(["/reponse", data.id])
+      this.router.navigate(["/AjoutRep", data.id])
     });
   }
 
@@ -60,6 +58,5 @@ export class QuestionComponent implements OnInit {
        catchError(err=> of({dataState:  DataStateEnum.ERROR,errorMessage:err.message}))
      );
    }*/
+
 }
-
-

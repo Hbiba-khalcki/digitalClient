@@ -2,39 +2,39 @@
     display: block !important;
     padding: 20px;  
 }
-.card{
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    right: 20px;
-    background-color: #F2F2F2;
-    overflow: auto;
-}
-.container {
-    display: inline-block;
-    position: relative;
-    margin-right: 5px;
+.card{     
+    position: absolute;     
+    top: 10px;     
+    left: 20px;     
+    right: 20px;     
+    background-color: #F2F2F2;     
+    overflow: auto; } 
+.container {     
+    display: inline-block;     
+    position: relative;     
+    margin-right: 5px;     
+    margin-left: 60px;     
+    margin-bottom: 20px; } 
+.text {     
+    z-index: 1;     
+    position: absolute;     
+    font-family: Arial, Helvetica, sans-serif;        
+    font-size: 20px;     
+    margin: 25px;     
+    left: 0;     
+    right: 0;     
+    top: 10px;     
+    width: 90%;     
+    color: rgb(255, 255, 255); } 
+img{     
+    border-radius: 2px;
+    margin: 20px;
+} 
+h1 {     
+    color: #6F6CF9;     
+    text-align: center;     
+    font-size: 45px; }
+mat-label{
     margin-left: 60px;
-    margin-bottom: 20px;
-}
-.text {
-    z-index: 1;
-    position: absolute;
-    font-family: Arial, Helvetica, sans-serif;   
-    font-size: 20px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-    top: 10px;
-    width: 90%;
-    color: rgb(83, 41, 197);
-}
-img{
-    border-radius: 12px;
-}
-h1
-{
-    color: #6F6CF9;
-    text-align: center;
-    font-size: 45px;
+    margin-top: 60px;
 }

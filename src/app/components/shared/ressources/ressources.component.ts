@@ -19,7 +19,7 @@ export class RessourcesComponent implements OnInit {
   axes:Axe[] = [];
   
   constructor(
-    
+
     private fb: FormBuilder,
     private router:Router,
     private ressourceService: RessourceService,
@@ -43,9 +43,7 @@ export class RessourcesComponent implements OnInit {
       this.ressourceFormGroup = this.fb.group({
         axe: ["test", Validators.required],
     });
-    
   }
-
 }
 
 

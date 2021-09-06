@@ -20,7 +20,7 @@ export class RecommandationService{
         return this.http.get<Recommandation[]>(host+"/recommandation");
       }
     
-      getRecommandation(id:number|null):Observable<Recommandation>{
+      getRecommandation(id:string|null):Observable<Recommandation>{
         let host=environment.host;
         return this.http.get<Recommandation>(host+ "/recommandation/"+id);
       }

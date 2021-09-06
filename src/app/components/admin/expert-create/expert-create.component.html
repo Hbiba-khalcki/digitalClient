@@ -1,7 +1,7 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
     <mat-card class="box">
       <mat-card-header>
-        <mat-card-title>Register</mat-card-title>
+        <mat-card-title>Ajouter un expert</mat-card-title>
       </mat-card-header>
       <form class="example-form" *ngIf="!isSuccessful" name="form"
        (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
@@ -19,10 +19,12 @@
               Username must be at most 20 characters
             </div>
           </div>
+          <br>
           <mat-form-field class="example-full-width">
             <input matInput placeholder="Email" type="email" class="form-control" name="email" [(ngModel)]="form.email"
               required email #email="ngModel">
           </mat-form-field>
+          <br>
           <div class="alert-danger" *ngIf="email.errors && f.submitted">
             <div *ngIf="email.errors.required">Email is required</div>
             <div *ngIf="email.errors.email">
@@ -33,12 +35,14 @@
             <input matInput placeholder="Mot de passe" type="password" class="form-control" name="password"
               [(ngModel)]="form.password" required minlength="6" #password="ngModel">
           </mat-form-field>
+          <br>
           <div class="alert-danger" *ngIf="password.errors && f.submitted">
             <div *ngIf="password.errors.required">Password is required</div>
             <div *ngIf="password.errors.minlength">
               Password must be at least 6 characters
             </div>
           </div>
+          <br>
           <mat-form-field class="example-full-width">
             <mat-label>Choisissez un rôle...</mat-label>
             <mat-select  [(ngModel)]="form.role" name="role">
@@ -50,6 +54,7 @@
                 </mat-option>
             </mat-select>
           </mat-form-field>
+
         </mat-card-content>
         <button mat-stroked-button color="accent" class="btn-block">Register</button>
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -58,6 +63,7 @@
       </form>
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
+        <app-expert-list></app-expert-list>
       </div>
     </mat-card>
   </div>

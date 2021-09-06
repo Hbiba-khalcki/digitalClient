@@ -1,31 +1,102 @@
-<div fxLayout="row wrap">
+<form [formGroup]="ressourceFormGroup">
 
-    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
-        <mat-card>
-            <div>
-                <div fxLayout="row" fxLayoutAlign="stretch">
-                    <form [formGroup]="ressourceFormGroup">
-                        <mat-card *ngFor="let ressource of ressources">
-                        <h1 *ngFor="let axe of axes">Axe : Stratégie et Leadership {{axe.nameAxe}}</h1>
-                        <br>
-                        <div class="container">
-                            <a href="https://bridgr.co" target="_blank">
-                                <img src="/assets/Stra/6.PNG" width="280" height="220"> </a>
-                            <div class="text">
-                                <p>{{ressource.secteur}}</p>
-                            </div>
+    <mat-toolbar>
+        <span>Stratégie et Leadership</span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div *ngFor="let number of [0,1,2]">
+            <div *ngFor="let ressource of ressources">
+                <div *ngIf="ressource.axe.nameAxe === 'strategie leadership' ">
+                    <div class="container">
+                        <a href="https://bridgr.co" target="_blank">
+                            <img src="/assets/Stra/6.PNG" width="280" height="250">
+                        </a>
+                        <div class="text">
+                            <p>{{ressource.secteur}}
+                            </p>
                         </div>
-                    </mat-card>
-                    </form>
+                    </div>
                 </div>
-
-                <div class="btn-center">
-                    <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
-                </div>
-
             </div>
-        </mat-card>
+        </div>
     </div>
 
+    <mat-toolbar>
+        <span>Technologies et services</span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div *ngFor="let number of [0,1,2]">
+            <div *ngFor="let ressource of ressources">
+                <div *ngIf="ressource.axe.nameAxe === 'technologie service' ">
+                    <div class="container">
+                        <a href="https://bridgr.co" target="_blank">
+                            <img src="/assets/Stra/6.PNG" width="280" height="220">
+                        </a>
+                        <div class="text">
+                            <p>{{ressource.secteur}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
+    <mat-toolbar>
+        <span>Culture et Innovation</span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div *ngFor="let number of [0,1,2]">
+            <div *ngFor="let ressource of ressources">
+                <div *ngIf="ressource.axe.nameAxe === 'culture innovation' ">
+                    <mat-label>{{ressource.axe.nameAxe}}</mat-label>
+                    <div class="container"><a href="https://bridgr.co" target="_blank"><img src="/assets/Stra/6.PNG"
+                                width="280" height="220"></a>
+                        <div class="text">
+                            <p>{{ressource.secteur}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-toolbar>
+        <span>Opérations et processus</span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div *ngFor="let number of [0,1,2]">
+            <div *ngFor="let ressource of ressources">
+                <div *ngIf="ressource.axe.nameAxe === 'operation processus' ">
+                    <mat-label>{{ressource.axe.nameAxe}}</mat-label>
+                    <div class="container"><a href="https://bridgr.co" target="_blank"><img src="/assets/Stra/6.PNG"
+                                width="280" height="220"></a>
+                        <div class="text">
+                            <p>{{ressource.secteur}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-toolbar>
+        <span>Infrastructure informatique et données</span>
+    </mat-toolbar>
+    <div fxLayout="row" fxLayoutAlign="space-between none">
+        <div *ngFor="let number of [0,1,2]">
+            <div *ngFor="let ressource of ressources">
+                <div *ngIf="ressource.axe.nameAxe === 'infrastructure informatique' ">
+                    <div class="container">
+                        <a href="https://bridgr.co" target="_blank">
+                            <img src="/assets/Stra/6.PNG" width="280" height="220"></a>
+                        <div class="text">
+                            <p>{{ressource.secteur}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>

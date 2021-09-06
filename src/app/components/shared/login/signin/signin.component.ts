@@ -30,7 +30,7 @@ export class SigninComponent implements OnInit {
             this.router.navigate(['list-exp']);
             break;
           case 'ROLE_EXPERT':
-            this.router.navigate(['question']);
+            this.router.navigate(['MenuAffichage']);
             break;
           case 'ROLE_USER':
             this.router.navigate(['typeorganisation']);
@@ -60,7 +60,7 @@ export class SigninComponent implements OnInit {
                 break;
               case 'ROLE_EXPERT':
                 // route par default expert
-                this.router.navigate(['axe']);
+                this.router.navigate(['MenuAffichage']);
                 break;
               case 'ROLE_USER':
                 // route par default client

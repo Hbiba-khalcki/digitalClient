@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,7 +24,6 @@ import { FormulaireContactComponent } from './components/shared/formulaire-conta
 import { RessourcesComponent } from './components/shared/ressources/ressources.component';
 import { MatInputModule } from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { QuestionComponent } from './components/expert/question/question.component';
 import {MatSelectModule} from '@angular/material/select';
 
 import { MatRadioModule } from '@angular/material/radio';
@@ -37,7 +35,6 @@ import { SigninComponent } from './components/shared/login/signin/signin.compone
 import { SignupComponent } from './components/shared/login/signup/signup.component';
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReponsesComponent } from './components/expert/reponses/reponses.component';
 
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
@@ -53,8 +50,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AxesEvaluationComponent } from './components/client/resultat/axes-evaluation/axes-evaluation.component';
 import { ComparaisonComponent } from './components/client/resultat/comparaison/comparaison.component';
 import { EvolutionComponent } from './components/client/resultat/evolution/evolution.component';
-
-import { RecommandationComponent } from './components/expert/recommandation/recommandation.component';
 
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -77,7 +72,23 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactezNousComponent } from './components/shared/apropos/contactez-nous/contactez-nous.component';
 import { LogoutComponent } from './components/shared/login/logout/logout.component';
-import { AxeComponent } from './components/expert/axe/axe.component';
+import { ListeQuestionComponent } from './components/expert/question/liste-question/liste-question.component';
+import { AjoutQuestionComponent } from './components/expert/question/ajout-question/ajout-question.component';
+import { ModifQuestionComponent } from './components/expert/question/modif-question/modif-question.component';
+import { ListeReponseComponent } from './components/expert/reponses/liste-reponse/liste-reponse.component';
+import { ModifReponseComponent } from './components/expert/reponses/modif-reponse/modif-reponse.component';
+import { AjoutReponseComponent } from './components/expert/reponses/ajout-reponse/ajout-reponse.component';
+import { MenuComponent } from './components/expert/menu/menu.component';
+import { AjoutAxeComponent } from './components/expert/axe/ajout-axe/ajout-axe.component';
+import { ListeAxeComponent } from './components/expert/axe/liste-axe/liste-axe.component';
+import { ModifAxeComponent } from './components/expert/axe/modif-axe/modif-axe.component';
+import { ModifRecommandationComponent } from './components/expert/recommandation/modif-recommandation/modif-recommandation.component';
+import { AjoutRecommandationComponent } from './components/expert/recommandation/ajout-recommandation/ajout-recommandation.component';
+import { ListeRecommandationComponent } from './components/expert/recommandation/liste-recommandation/liste-recommandation.component';
+import { AjoutRessourceComponent } from './components/expert/ressources/ajout-ressource/ajout-ressource.component';
+import { ModifRessourceComponent } from './components/expert/ressources/modif-ressource/modif-ressource.component';
+import { ListeRessourceComponent } from './components/expert/ressources/liste-ressource/liste-ressource.component';
+
 @NgModule({
   declarations: [
     AppComponent, 
@@ -89,24 +100,28 @@ import { AxeComponent } from './components/expert/axe/axe.component';
     ContactezNousComponent, 
     FormulaireContactComponent, 
     RessourcesComponent, 
-    QuestionComponent, 
-    RecommandationComponent,
+
 
     StrategieLeadershipComponent, 
     InfoEntrpComponent,
     InfoEntrpTwoComponent,
-     ScoreComponent,
+    ScoreComponent,
     SigninComponent,
     SignupComponent, 
-    ReponsesComponent, 
     
     ExpertCreateComponent, ExpertListComponent, ExpertDetailComponent, ExpertDeleteComponent, ExpertEditComponent, AxesEvaluationComponent, ComparaisonComponent, EvolutionComponent, 
     
     ResPerStrategieComponent, ResPerInfrastructureComponent, ResPerOperationComponent, ResPerTechnologieComponent, ResPerCultureComponent, 
    
-    RecsCultureComponent, RecsStrategieComponent, RecsInfrastructureComponent, RecsOperationComponent, RecsTechnologieComponent, RecsGeneralComponent, LogoutComponent, AxeComponent,
+    RecsCultureComponent, RecsStrategieComponent, RecsInfrastructureComponent, RecsOperationComponent, RecsTechnologieComponent, RecsGeneralComponent, LogoutComponent,
     
-
+    ListeQuestionComponent,AjoutQuestionComponent, ModifQuestionComponent, 
+    AjoutReponseComponent, ModifReponseComponent, ListeReponseComponent, 
+    MenuComponent, 
+    AjoutAxeComponent, ListeAxeComponent, ModifAxeComponent, 
+    ModifRecommandationComponent, AjoutRecommandationComponent, ListeRecommandationComponent, 
+    AjoutRessourceComponent,  ModifRessourceComponent, ListeRessourceComponent,
+  
   ],
   imports: [
     BrowserModule,

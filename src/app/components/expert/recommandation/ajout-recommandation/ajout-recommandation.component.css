@@ -1,0 +1,31 @@
+.btn-center {
+    text-align: center;
+}
+mat-form-field{
+    width: 550px;
+    height: 50px;
+    margin: 20px;
+}
+.btn-gray {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+    margin-right: 15px;
+}
+.col-padding{
+      padding: 15px;
+}
+.titre{
+      color: #2F80ED;
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+}
+.text-center{
+      text-align: center;
+}
+.text-bold{
+      font-weight:400;
+  }
+.mh-100{
+    max-width: 100%;
+    border-radius: 20px;
+  }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecommandationComponent } from './recommandation.component';
+import { ListeAxeComponent } from './liste-axe.component';
 
-describe('RecommandationComponent', () => {
-  let component: RecommandationComponent;
-  let fixture: ComponentFixture<RecommandationComponent>;
+describe('ListeAxeComponent', () => {
+  let component: ListeAxeComponent;
+  let fixture: ComponentFixture<ListeAxeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecommandationComponent ]
+      declarations: [ ListeAxeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecommandationComponent);
+    fixture = TestBed.createComponent(ListeAxeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

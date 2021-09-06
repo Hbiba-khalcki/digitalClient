@@ -8,36 +8,30 @@ import { EntrepriseService } from 'src/app/services/entreprise.service';
   templateUrl: './info-entrp-two.component.html',
   styleUrls: ['./info-entrp-two.component.css']
 })
-export class InfoEntrpTwoComponent implements OnInit { 
-
-  entreprise:any={
-    type:"",
-    familie_ent:"",
-    annee_const:"",
-    nb_employe:"",
-    revenu:""
+export class InfoEntrpTwoComponent implements OnInit {
+  entreprise: any = {
+    type: "",
+    familie_ent: "",
+    annee_const: "",
+    nb_employe: "",
+    revenu: ""
   };
-  
-  submitted:boolean=false;
-
-  constructor(private router:Router,
-           
-              private entrepriseService: EntrepriseService,
-    )
-   {}
-   ngOnInit(): void {
-    this.entrepriseService.getEntreprise().subscribe((data:any)=>{
+  submitted: boolean = false;
+  constructor(private router: Router,
+    private entrepriseService: EntrepriseService,
+  ) { }
+  ngOnInit(): void {
+    this.entrepriseService.getEntreprise().subscribe((data: any) => {
       this.entreprise = data;
     });
-
-}
-  onSaveEntreprise(){
-    this.submitted=true;
+  }
+  onSaveEntreprise() {
+    this.submitted = true;
     this.entrepriseService.saveEntreprise(this.entreprise).subscribe(date => {
       alert("succes save")
       this.router.navigateByUrl("/infoentrptwo")
     })
- 
-}
+
+  }
 
 }

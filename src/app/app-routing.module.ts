@@ -10,11 +10,8 @@ import {InfoEntrpComponent} from './components/client/renseignements/info-entrp/
 import {OrganisationTypeComponent} from './components/client/renseignements/organisation-type/organisation-type.component';
 import {ScoreComponent} from './components/client/resultat/score/score.component';
 import {HomeComponent} from './components/shared/home/home.component';
-import {QuestionComponent} from './components/expert/question/question.component';
-import {RecommandationComponent} from './components/expert/recommandation/recommandation.component';
 import {SigninComponent} from './components/shared/login/signin/signin.component';
 import {SignupComponent} from './components/shared/login/signup/signup.component';
-import {ReponsesComponent} from './components/expert/reponses/reponses.component';
 import {ExpertListComponent} from './components/admin/expert-list/expert-list.component';
 import {ExpertCreateComponent} from './components/admin/expert-create/expert-create.component';
 import {ExpertDetailComponent} from './components/admin/expert-detail/expert-detail.component';
@@ -39,7 +36,22 @@ import {AdminGuard} from './components/shared/guards/admin.guard';
 import {ClientGuard} from './components/shared/guards/client.guard';
 import {ExpertGuard} from './components/shared/guards/expert.guard';
 import { LogoutComponent } from './components/shared/login/logout/logout.component';
-import { AxeComponent } from './components/expert/axe/axe.component';
+import { MenuComponent } from './components/expert/menu/menu.component';
+import { ListeAxeComponent } from './components/expert/axe/liste-axe/liste-axe.component';
+import { AjoutAxeComponent } from './components/expert/axe/ajout-axe/ajout-axe.component';
+import { ListeQuestionComponent } from './components/expert/question/liste-question/liste-question.component';
+import { ModifAxeComponent } from './components/expert/axe/modif-axe/modif-axe.component';
+import { ModifQuestionComponent } from './components/expert/question/modif-question/modif-question.component';
+import { AjoutQuestionComponent } from './components/expert/question/ajout-question/ajout-question.component';
+import { ListeReponseComponent } from './components/expert/reponses/liste-reponse/liste-reponse.component';
+import { AjoutReponseComponent } from './components/expert/reponses/ajout-reponse/ajout-reponse.component';
+import { ModifReponseComponent } from './components/expert/reponses/modif-reponse/modif-reponse.component';
+import { ListeRecommandationComponent } from './components/expert/recommandation/liste-recommandation/liste-recommandation.component';
+import { AjoutRecommandationComponent } from './components/expert/recommandation/ajout-recommandation/ajout-recommandation.component';
+import { ModifRecommandationComponent } from './components/expert/recommandation/modif-recommandation/modif-recommandation.component';
+import { ListeRessourceComponent } from './components/expert/ressources/liste-ressource/liste-ressource.component';
+import { AjoutRessourceComponent } from './components/expert/ressources/ajout-ressource/ajout-ressource.component';
+import { ModifRessourceComponent } from './components/expert/ressources/modif-ressource/modif-ressource.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -58,14 +70,43 @@ const routes: Routes = [
 
   {path: 'score', component: ScoreComponent},
 
+  /* ********Admin*********** */
+  {path: 'list-exp', component: ExpertListComponent, canActivate: [AdminGuard]},
+  {path: 'create-exp', component: ExpertCreateComponent, canActivate: [AdminGuard]},
+  {path: 'detail-exp/:id', component: ExpertDetailComponent, canActivate: [AdminGuard]},
+  {path: 'edit-exp/:id', component: ExpertEditComponent, canActivate: [AdminGuard]},
+  {path: 'delete-exp', component: ExpertDeleteComponent, canActivate: [AdminGuard]},
+
+  /* ********Expert*********** */
+  {path: 'MenuAffichage', component: MenuComponent, canActivate: [ExpertGuard]},
+  /* Partie Axe Expert */
+  {path: 'ListAxe', component: ListeAxeComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutAxe', component: AjoutAxeComponent, canActivate: [ExpertGuard]},
+  {path: 'ModifAxe/:id', component: ModifAxeComponent, canActivate: [ExpertGuard]},
+
+  /* Partie Question Expert */
+  {path: 'ListQuest', component: ListeQuestionComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutQuest', component: AjoutQuestionComponent, canActivate: [ExpertGuard]},
+  {path: 'ModifQuest', component: ModifQuestionComponent, canActivate: [ExpertGuard]},
+
+  /* Partie Reponse Expert */
+  {path: 'ListRep', component: ListeReponseComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutRep/:id', component: AjoutReponseComponent, canActivate: [ExpertGuard]},
+  {path: 'ModifRep/:id', component: ModifReponseComponent, canActivate: [ExpertGuard]},
+
+  /* Partie Recommandation Expert */
+  {path: 'ListRec', component: ListeRecommandationComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutRec', component: AjoutRecommandationComponent, canActivate: [ExpertGuard]},
+  {path: 'ModifRec/:id', component: ModifRecommandationComponent, canActivate: [ExpertGuard]},
+
+  /* Partie Ressource Expert */
+  {path: 'ListRes', component: ListeRessourceComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutRes/:id', component: AjoutRessourceComponent, canActivate: [ExpertGuard]},
+  {path: 'ModifRes/:id', component: ModifRessourceComponent, canActivate: [ExpertGuard]},
+
+  /* ********Client*********** */
   {path: 'questions/:order', component: StrategieLeadershipComponent, canActivate: [ClientGuard]},
-
    
-  {path: 'question', component: QuestionComponent, canActivate: [ExpertGuard]},
-  {path: 'recommandation', component: RecommandationComponent, canActivate: [ExpertGuard]},
-  {path: 'reponse/:id', component: ReponsesComponent, canActivate: [ExpertGuard]},
-  {path: 'axe', component: AxeComponent, canActivate: [ExpertGuard]},
-
   {path: 'list-exp', component: ExpertListComponent, canActivate: [AdminGuard]},
   {path: 'create-exp', component: ExpertCreateComponent, canActivate: [AdminGuard]},
   {path: 'detail-exp/:id', component: ExpertDetailComponent, canActivate: [AdminGuard]},

@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Reponse } from 'src/app/models/reponse.model';
 import { QuestionService } from 'src/app/services/question.service';
 import { ReponseService } from 'src/app/services/reponse.service';
 
 @Component({
-  selector: 'app-reponses',
-  templateUrl: './reponses.component.html',
-  styleUrls: ['./reponses.component.css'],
+  selector: 'app-ajout-reponse',
+  templateUrl: './ajout-reponse.component.html',
+  styleUrls: ['./ajout-reponse.component.css']
 })
-export class ReponsesComponent implements OnInit {
+export class AjoutReponseComponent implements OnInit {
   nb_reps: number = 0;
   id: string;
   numbers: any;
@@ -25,8 +24,6 @@ export class ReponsesComponent implements OnInit {
   ) {}
  
   ngOnInit(): void {
- 
- 
     const that = this; //pour garder l'objet ReponsesComponent
     this.route.params.subscribe((params) => {
       this.qstId=params['id'];
@@ -61,9 +58,7 @@ export class ReponsesComponent implements OnInit {
     this.submitted=true;
     this.reponService.saveReponse(this.reponses).subscribe(data=>{
       alert("succes save") 
-      this.router.navigateByUrl("/recommandation")
+      this.router.navigateByUrl("/MenuAffichage")
     });
   }
-
-
 }

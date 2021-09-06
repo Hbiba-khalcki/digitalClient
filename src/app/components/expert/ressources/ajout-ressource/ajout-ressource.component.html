@@ -1,0 +1,63 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/question.PNG" class="mh-100">
+        <p class="titre text-bold">Poser une ressource bien précise appartient à un axe</p>
+        <p class="text-bold"> Pour que l'analyse de digital maturité <br>
+            soit bien étudier : il faut choisir convenable <br>
+            notre démarche des questions et récommandations.</p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form [formGroup]="ressourceFormGroup">
+                        <mat-form-field>
+                            <mat-label>Ressource :</mat-label>
+                            <input matInput formControlName="nom" id="ressource" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Secteur :</mat-label>
+                            <input matInput formControlName="secteur" id="secteur" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Entite :</mat-label>
+                            <input matInput formControlName="entite" id="entite" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Lien :</mat-label>
+                            <input matInput formControlName="lien" id="lien" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Ref_document :</mat-label>
+                            <input matInput formControlName="ref_document" id=" ref_document" required>
+                        </mat-form-field>
+
+                        <h4 style="margin-left: 23px;">Les axes :</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choisir un axe </mat-label>
+                            <mat-select formControlName="axe" required>
+                                <mat-option *ngFor="let axe of axes" [value]="axe">
+                                    {{axe.nameAxe}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                    </form>
+                </div>
+
+                <div class="btn-center">
+                    <button mat-button class="btn-gray" routerLink="/"> Précédent </button>
+                    <button mat-raised-button color="primary" (click)="onSaveRessources()"> Suivant </button>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+
+</div>

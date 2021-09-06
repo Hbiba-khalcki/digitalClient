@@ -5,12 +5,13 @@ import { Axe } from 'src/app/models/axe.model';
 import { AxeService } from 'src/app/services/axe.service';
 
 @Component({
-  selector: 'app-axe',
-  templateUrl: './axe.component.html',
-  styleUrls: ['./axe.component.css']
+  selector: 'app-ajout-axe',
+  templateUrl: './ajout-axe.component.html',
+  styleUrls: ['./ajout-axe.component.css']
 })
-export class AxeComponent implements OnInit {
-  axeFormGroup: FormGroup;
+export class AjoutAxeComponent implements OnInit {
+
+   axeFormGroup: FormGroup;
   submitted: boolean = false;
   axes: Axe[] = [];
 
@@ -45,4 +46,5 @@ export class AxeComponent implements OnInit {
     })
 
   }
+
 }
