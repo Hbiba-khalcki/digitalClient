@@ -101,7 +101,7 @@ const routes: Routes = [
 
   /* Partie Ressource Expert */
   {path: 'ListRes', component: ListeRessourceComponent, canActivate: [ExpertGuard]},
-  {path: 'AjoutRes/:id', component: AjoutRessourceComponent, canActivate: [ExpertGuard]},
+  {path: 'AjoutRes', component: AjoutRessourceComponent, canActivate: [ExpertGuard]},
   {path: 'ModifRes/:id', component: ModifRessourceComponent, canActivate: [ExpertGuard]},
 
   /* ********Client*********** */
