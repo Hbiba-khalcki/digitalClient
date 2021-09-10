@@ -23,14 +23,14 @@ export class ListeQuestionComponent implements OnInit  , AfterViewInit{
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
  
-  constructor(private repoService: QuestionService, private router: Router) { }
+  constructor(private questionService: QuestionService, private router: Router) { }
  
   ngOnInit() {
     this.getAllQuestions();
   }
  
   public getAllQuestions = () => {
-    this.repoService.getAllQuestions()
+    this.questionService.getAllQuestions()
     .subscribe(res => {
       this.dataSource.data = res as Question[];
     },
@@ -52,14 +52,18 @@ export class ListeQuestionComponent implements OnInit  , AfterViewInit{
   }
  
   public redirectToDetails = (id: string) => {
-    let url: string = `/question/details/${id}`;
+    let url: string = `/AjoutRep/${id}`;
     this.router.navigate([url]);
   }
  
-  public redirectToUpdate = (id: string) => {
-  }
- 
-  public redirectToDelete = (id: string) => {
-  }
+  
+  onDeleteQuestion(id:string){
+    this.questionService.DeleteQuestion(id).subscribe(data =>{
+      this.getAllQuestions();
+    });
+}
 
+onUpdateQuestion(id:string){
+  this.router.navigateByUrl("/modifQuest/"+id)
+}
 }

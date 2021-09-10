@@ -22,14 +22,14 @@ export class ListeRecommandationComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private repoService: RecommandationService, private router: Router) { }
+  constructor(private recommandationService: RecommandationService, private router: Router) { }
 
   ngOnInit() {
     this.getAllRecommandations();
   }
 
-  public getAllRecommandations = () => {
-    this.repoService.getAllRecommandations()
+  getAllRecommandations(){
+    this.recommandationService.getAllRecommandations()
       .subscribe(res => {
         console.log(res);
         this.dataSource.data = res as Recommandation[];
@@ -39,34 +39,42 @@ export class ListeRecommandationComponent implements OnInit, AfterViewInit {
         })     
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(){
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  public customSort = (event) => {
+  customSort(event){
     console.log(event);
   }
 
-  public doFilter = (value: string) => {
+  doFilter(value: string){
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  public redirectToUpdate = (id : string ) => {
+   redirectToUpdate(id : string ){
     const updateUrl: string = `ModifRec/${id}`;
     console.log(id);
     this.router.navigate([updateUrl]);
   }
 
 
-  public redirectToDelete = (id: string) => {
+   redirectToDelete(id: string) {
     this.submitted = true;
     if (this.recommandationFormGroup?.invalid) return;
-    this.repoService.DeleteRecommandation(this.recommandationFormGroup?.value).subscribe(data => {
+    this.recommandationService.DeleteRecommandation(this.recommandationFormGroup?.value).subscribe(data => {
       alert("succes save")
       this.recommandationFormGroup.reset()
     });
 
   }
+  onDeleteQuestion(id:string){
+    this.recommandationService.DeleteRecommandation(id).subscribe(data =>{
+      this.getAllRecommandations();
+    });
+  }
 
+  onUpdateRecommandation(id:string){
+    this.router.navigateByUrl("/modifrec/"+id)
+  }
 }

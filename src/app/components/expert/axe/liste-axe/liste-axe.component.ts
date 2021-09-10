@@ -19,14 +19,14 @@ export class ListeAxeComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
  
-  constructor(private repoService: AxeService, private router: Router) { }
+  constructor(private axeService: AxeService, private router: Router) { }
  
   ngOnInit() {
     this.getAllAxes();
   }
  
   public getAllAxes = () => {
-    this.repoService.getAllAxes()
+    this.axeService.getAllAxes()
     .subscribe(res => {
       this.dataSource.data = res as Axe[];
     },
@@ -47,13 +47,34 @@ export class ListeAxeComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
  
-  public redirectToUpdate = (id: string) => {
-    let url: string = `ModifAxe/${id}`;
-    this.router.navigate([url]);
+  
+  onUpdateAxe(id: string){
+    this.router.navigateByUrl("/modifAxe/"+id)
   }
  
-  public redirectToDelete = (id: string) => {
+ 
+ 
+
+  onDeleteAxe(id:string){
+   this.axeService.DeleteAxe(id).subscribe(data =>{
+     this.getAllAxes();
+   });
   }
+
+
+
+
+/* onSearch(){
+  this.products$=this.productsService.SearchProduct(this.searched).pipe(
+    map(data=> 
+      ({ dataState: DataStateEnum.LOADED,data:data })),
+    startWith({dataState:  DataStateEnum.LOADING}),
+     catchError(err=> of({dataState:  DataStateEnum.ERROR,errorMessage:err.message}))
+   );
+
+}
+
+} */
 
 
 }

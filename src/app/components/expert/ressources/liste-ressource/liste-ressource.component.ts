@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { RessourceService } from 'src/app/services/ressource.service';
 import { Ressource } from 'src/app/models/ressource.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-ressource',
@@ -18,19 +19,18 @@ export class ListeRessourceComponent implements OnInit  , AfterViewInit{
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
  
-  constructor(private repoService: RessourceService) { }
+  constructor(private ressourceService: RessourceService,
+    private router:Router) { }
  
   ngOnInit() {
     this.getAllRessources();
   }
  
   public getAllRessources = () => {
-    this.repoService.getAllRessources()
+    this.ressourceService.getAllRessources()
     .subscribe(res => {
       this.dataSource.data = res as Ressource[];
 
-      console.log("*****************************");
-      console.log(res);
     },
     (error) => {
     })
@@ -52,7 +52,16 @@ export class ListeRessourceComponent implements OnInit  , AfterViewInit{
   public redirectToUpdate = (id: string) => {
   }
  
-  public redirectToDelete = (id: string) => {
+
+
+  onDeleteRessource(id:string){
+    console.log(id)
+    this.ressourceService.DeleteRessource(id).subscribe(data=>{
+      this.getAllRessources();
+    })
   }
 
+  onUpdateRessource(id:string){
+    this.router.navigateByUrl("/modifres/"+id)
+  }
 }

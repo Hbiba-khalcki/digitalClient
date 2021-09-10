@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RecommandationService } from 'src/app/services/recommandation.service';
 import { Recommandation } from 'src/app/models/recommandation.model';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Axe } from 'src/app/models/axe.model';
+import { AxeService } from 'src/app/services/axe.service';
 
 @Component({
   selector: 'app-modif-recommandation',
@@ -11,64 +13,50 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ModifRecommandationComponent implements OnInit {
 
-  public errorMessage: string = '';
-  public recommandation: Recommandation;
-  public recommandationForm: FormGroup;
-  constructor(
-    private repository: RecommandationService,  private router: Router,
-    private activeRoute: ActivatedRoute) 
-    { }
 
-  ngOnInit() {
-    this.recommandationForm = new FormGroup({
-      contenu: new FormControl('', [Validators.required, Validators.maxLength(60)]),
-      priorite: new FormControl('', [Validators.required]),
-      reference: new FormControl('', [Validators.required, Validators.maxLength(100)])
-    });
-    this.getrecommandationById();
+  recId:string;
+ recFormGroup?:FormGroup;
+  private submitted:boolean=false;
+  axes: Axe[] = [];
+
+  constructor(private activatedRoute:ActivatedRoute,
+              private recService:RecommandationService,
+              private fb:FormBuilder,
+              private axeService:AxeService) { 
+    this.recId= activatedRoute.snapshot.params.id;
+
   }
-  private getrecommandationById = () => {
-    let recommandationId: string = this.activeRoute.snapshot.params['id'];
 
-    let recommandationByIdUrl: string = `${recommandationId}`;
-
-    this.repository.getRecommandation(recommandationByIdUrl)
-      .subscribe(res => {
-        console.log(res.id);
-        this.recommandation = res as Recommandation;
-        this.recommandationForm.patchValue(this.recommandation);
-      },
-        (error) => {
+  ngOnInit(): void {
+    this.recService.getRecommandation(this.recId)
+    .subscribe(rec =>{
+      this.recFormGroup= this.fb.group({
+          id:[rec.id,Validators.required],
+          priorite:[rec.priorite,Validators.required],
+          axe:[rec.axe,Validators.required],
+          contenu:[rec.contenu,Validators.required],
+          reference:[rec.reference,Validators.required],
+        
+        });
+        this.axeService.getAllAxes().subscribe(data=>{
+          this.axes = data;
         })
+      })
   }
-  public validateControl = (controlName: string) => {
-    if (this.recommandationForm.controls[controlName].invalid && this.recommandationForm.controls[controlName].touched)
-      return true;
+  onUpdateRecommandation(){
+    this.recService.updateRecommandation(this.recFormGroup?.value)
+    .subscribe(data=>{
+      alert("update success");
+    });
+  }
   
-    return false;
-  }
-  
-  public hasError = (controlName: string, errorName: string)  => {
-    if (this.recommandationForm.controls[controlName].hasError(errorName))
-      return true;
-    return false;
-  }
- 
-  public redirectTorecommandationList = () => {
-    this.router.navigate(['/recommandation/list']);
-  }
 
-  public updateRecommandation = (recommandationFormValue) => {
-    if (this.recommandationForm.valid) {
-      this.executeRecommandationFormValueUpdate(recommandationFormValue);
-    }
-  }
   
-  private executeRecommandationFormValueUpdate = (recommandationFormValue) => {
-    this.recommandation.contenu = recommandationFormValue.contenu;
-    this.recommandation.pourcentage = recommandationFormValue.priorite;
+ 
+  
+
   
   
-  }
+  
 
 }

@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppComponent } from './app.component';
@@ -16,15 +16,15 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/shared/nav-bar/nav-bar.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/shared/home/home.component';
-import { OrganisationTypeComponent } from'./components/client/renseignements/organisation-type/organisation-type.component';
+import { OrganisationTypeComponent } from './components/client/renseignements/organisation-type/organisation-type.component';
 import { InfoClientComponent } from './components/client/renseignements/info-client/info-client.component';
 import { AproposComponent } from './components/shared/apropos/apropos.component';
 
 import { FormulaireContactComponent } from './components/shared/formulaire-contact/formulaire-contact.component';
 import { RessourcesComponent } from './components/shared/ressources/ressources.component';
 import { MatInputModule } from '@angular/material/input';
-import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -51,8 +51,8 @@ import { AxesEvaluationComponent } from './components/client/resultat/axes-evalu
 import { ComparaisonComponent } from './components/client/resultat/comparaison/comparaison.component';
 import { EvolutionComponent } from './components/client/resultat/evolution/evolution.component';
 
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { ResPerStrategieComponent } from './components/client/resultat/ressourcespersonnalisees/res-per-strategie/res-per-strategie.component';
 import { ResPerInfrastructureComponent } from './components/client/resultat/ressourcespersonnalisees/res-per-infrastructure/res-per-infrastructure.component';
@@ -91,37 +91,57 @@ import { ListeRessourceComponent } from './components/expert/ressources/liste-re
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    NavBarComponent, 
-    HomeComponent, 
-    OrganisationTypeComponent, 
-    InfoClientComponent, 
-    AproposComponent, 
-    ContactezNousComponent, 
-    FormulaireContactComponent, 
-    RessourcesComponent, 
-
-
-    StrategieLeadershipComponent, 
+    AppComponent,
+    NavBarComponent,
+    HomeComponent,
+    OrganisationTypeComponent,
+    InfoClientComponent,
+    AproposComponent,
+    ContactezNousComponent,
+    FormulaireContactComponent,
+    RessourcesComponent,
+    StrategieLeadershipComponent,
     InfoEntrpComponent,
     InfoEntrpTwoComponent,
     ScoreComponent,
     SigninComponent,
-    SignupComponent, 
-    
-    ExpertCreateComponent, ExpertListComponent, ExpertDetailComponent, ExpertDeleteComponent, ExpertEditComponent, AxesEvaluationComponent, ComparaisonComponent, EvolutionComponent, 
-    
-    ResPerStrategieComponent, ResPerInfrastructureComponent, ResPerOperationComponent, ResPerTechnologieComponent, ResPerCultureComponent, 
-   
-    RecsCultureComponent, RecsStrategieComponent, RecsInfrastructureComponent, RecsOperationComponent, RecsTechnologieComponent, RecsGeneralComponent, LogoutComponent,
-    
-    ListeQuestionComponent,AjoutQuestionComponent, ModifQuestionComponent, 
-    AjoutReponseComponent, ModifReponseComponent, ListeReponseComponent, 
-    MenuComponent, 
-    AjoutAxeComponent, ListeAxeComponent, ModifAxeComponent, 
-    ModifRecommandationComponent, AjoutRecommandationComponent, ListeRecommandationComponent, 
-    AjoutRessourceComponent,  ModifRessourceComponent, ListeRessourceComponent,
-  
+    SignupComponent,
+    ExpertCreateComponent,
+    ExpertListComponent,
+    ExpertDetailComponent,
+    ExpertDeleteComponent,
+    ExpertEditComponent,
+    AxesEvaluationComponent,
+    ComparaisonComponent,
+    EvolutionComponent,
+    ResPerStrategieComponent,
+    ResPerInfrastructureComponent,
+    ResPerOperationComponent,
+    ResPerTechnologieComponent,
+    ResPerCultureComponent,
+    RecsCultureComponent,
+    RecsStrategieComponent,
+    RecsInfrastructureComponent,
+    RecsOperationComponent,
+    RecsTechnologieComponent,
+    RecsGeneralComponent,
+    LogoutComponent,
+    ListeQuestionComponent,
+    AjoutQuestionComponent,
+    ModifQuestionComponent,
+    AjoutReponseComponent,
+    ModifReponseComponent,
+    ListeReponseComponent,
+    MenuComponent,
+    AjoutAxeComponent,
+    ListeAxeComponent,
+    ModifAxeComponent,
+    ModifRecommandationComponent,
+    AjoutRecommandationComponent,
+    ListeRecommandationComponent,
+    AjoutRessourceComponent,
+    ModifRessourceComponent,
+    ListeRessourceComponent,
   ],
   imports: [
     BrowserModule,
@@ -135,7 +155,6 @@ import { ListeRessourceComponent } from './components/expert/ressources/liste-re
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-
     MatSelectModule,
     MatFormFieldModule,
     FlexLayoutModule,
@@ -143,29 +162,22 @@ import { ListeRessourceComponent } from './components/expert/ressources/liste-re
     MatFormFieldModule,
     MatInputModule,
     AppRoutingModule,
-    
     MatRadioModule,
     MatProgressBarModule,
-
     MatCheckboxModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-
     MatNativeDateModule,
     MatDatepickerModule,
     MatTabsModule,
     MatProgressSpinnerModule,
-
     NgApexchartsModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
-  exports: [
-    MatToolbarModule,
-  ],
+  exports: [MatToolbarModule],
 
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

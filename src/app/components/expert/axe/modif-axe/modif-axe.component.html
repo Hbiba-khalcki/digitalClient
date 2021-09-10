@@ -1,1 +1,36 @@
-<p>modif-axe works!</p>
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/question.PNG" class="mh-100">
+        <p class="titre text-bold">Poser un axe bien précise</p>
+        <p class="text-bold"> Pour que l'analyse de digital maturité <br>
+            soit bien étudier : il faut choisir convenable   <br>
+            notre démarche des questions et récommandations.</p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form  [formGroup]="axeFormGroup">
+                        <mat-form-field>
+                            <mat-label>NameAxe :</mat-label>
+                            <input matInput formControlName="nameAxe" id="nameAxe">
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>degreImportance :</mat-label>
+                            <input matInput formControlName="degreImportance" id="degreImportance" required>
+                        </mat-form-field>                          
+                    </form>
+                </div>
+
+                <div class="btn-center">
+                    <button mat-raised-button color="primary" (click)="onUpdateAxe()" > Suivant </button>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+
+</div>

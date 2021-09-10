@@ -1,8 +1,9 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Question } from "../models/question.model";
+
 
 
 @Injectable({ providedIn: "root" })
@@ -27,12 +28,12 @@ export class QuestionService {
     return this.http.get<Question[]>(host + "/question?name_like=" + keyword);
   }
 
-  DeleteQuestion(Question: Question): Observable<void> {
-    let host = environment.host;
-    return this.http.delete<void>(host + "/question/" + Question.id);
+  DeleteQuestion(id:string){
+    let host=environment.host;
+    return  this.http.delete(host+ "/question/" +id);
   }
 
-  getQuestion(id: number | null): Observable<Question> {
+  getQuestion(id: string | null): Observable<Question> {
     let host = environment.host;
     return this.http.get<Question>(host + "/question/" + id);
   }

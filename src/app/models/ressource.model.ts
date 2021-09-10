@@ -1,3 +1,5 @@
+import { Axe } from "./axe.model";
+
 export interface Ressource{
     id:number;
     nom:string;
@@ -5,4 +7,5 @@ export interface Ressource{
     entite:string;
     lien:string;
     ref_document:string;
+    axe:Axe;
 }

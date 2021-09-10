@@ -1,1 +1,48 @@
-<h1>ModRec</h1>
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/question.PNG" class="mh-100">
+        <p class="titre text-bold">Poser une récommandation bien précise appartient à un axe</p>
+        <p class="text-bold"> Pour que l'analyse de digital maturité <br>
+            soit bien étudier : il faut choisir convenable   <br>
+            notre démarche des questions et récommandations.</p>
+    </div>
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form [formGroup]="recFormGroup">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Récommandation :</mat-label>
+                            <input matInput formControlName="contenu" id="recommandation" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill">
+                            <mat-label>priorite :</mat-label>
+                            <input matInput formControlName="priorite" id="priorite" type="text" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>reference :</mat-label>
+                            <input matInput formControlName="reference" id="reference" type="text" required>
+                        </mat-form-field>
+
+
+                        <h4 style="margin-left: 23px;">Les axes :</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choisir un axe </mat-label>
+                            <mat-select formControlName="axe" required>
+                                <mat-option *ngFor="let axe of axes" [value]="axe">
+                                    {{axe.nameAxe}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </form>
+                </div>
+
+                <div class="btn-center">
+                    <button mat-button class="btn-gray" (click)="onUpdateRecommandation()"> update </button>
+    
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

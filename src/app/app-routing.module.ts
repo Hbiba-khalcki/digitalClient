@@ -54,13 +54,13 @@ import { AjoutRessourceComponent } from './components/expert/ressources/ajout-re
 import { ModifRessourceComponent } from './components/expert/ressources/modif-ressource/modif-ressource.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'typeorganisation', component: OrganisationTypeComponent},
-  {path: 'infoclient', component: InfoClientComponent},
-  {path: 'propos', component: AproposComponent},
+  {path: '', component: HomeComponent, canActivate: [ClientGuard]},
+  {path: 'typeorganisation', component: OrganisationTypeComponent, canActivate: [ClientGuard]},
+  {path: 'infoclient', component: InfoClientComponent, canActivate: [ClientGuard]},
+  {path: 'propos', component: AproposComponent },
   {path: 'contactez-nous', component: ContactezNousComponent},
   {path: 'formulaire', component: FormulaireContactComponent},
-  {path: 'ressource', component: RessourcesComponent},
+  {path: 'ressource', component: RessourcesComponent },
 
   {path: 'infoentrp', component: InfoEntrpComponent},
   {path: 'infoentrptwo', component: InfoEntrpTwoComponent},
@@ -82,12 +82,12 @@ const routes: Routes = [
   /* Partie Axe Expert */
   {path: 'ListAxe', component: ListeAxeComponent, canActivate: [ExpertGuard]},
   {path: 'AjoutAxe', component: AjoutAxeComponent, canActivate: [ExpertGuard]},
-  {path: 'ModifAxe/:id', component: ModifAxeComponent, canActivate: [ExpertGuard]},
+  {path: 'modifAxe/:id', component: ModifAxeComponent, canActivate: [ExpertGuard]},
 
   /* Partie Question Expert */
   {path: 'ListQuest', component: ListeQuestionComponent, canActivate: [ExpertGuard]},
   {path: 'AjoutQuest', component: AjoutQuestionComponent, canActivate: [ExpertGuard]},
-  {path: 'ModifQuest', component: ModifQuestionComponent, canActivate: [ExpertGuard]},
+  {path: 'modifQuest/:id', component: ModifQuestionComponent, canActivate: [ExpertGuard]},
 
   /* Partie Reponse Expert */
   {path: 'ListRep', component: ListeReponseComponent, canActivate: [ExpertGuard]},
@@ -97,12 +97,12 @@ const routes: Routes = [
   /* Partie Recommandation Expert */
   {path: 'ListRec', component: ListeRecommandationComponent, canActivate: [ExpertGuard]},
   {path: 'AjoutRec', component: AjoutRecommandationComponent, canActivate: [ExpertGuard]},
-  {path: 'ModifRec/:id', component: ModifRecommandationComponent, canActivate: [ExpertGuard]},
+  {path: 'modifrec/:id', component: ModifRecommandationComponent, canActivate: [ExpertGuard]},
 
   /* Partie Ressource Expert */
   {path: 'ListRes', component: ListeRessourceComponent, canActivate: [ExpertGuard]},
   {path: 'AjoutRes', component: AjoutRessourceComponent, canActivate: [ExpertGuard]},
-  {path: 'ModifRes/:id', component: ModifRessourceComponent, canActivate: [ExpertGuard]},
+  {path: 'modifres/:id', component: ModifRessourceComponent, canActivate: [ExpertGuard]},
 
   /* ********Client*********** */
   {path: 'questions/:order', component: StrategieLeadershipComponent, canActivate: [ClientGuard]},

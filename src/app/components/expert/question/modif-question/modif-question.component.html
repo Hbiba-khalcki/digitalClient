@@ -1,1 +1,54 @@
-<p>modif-question works!</p>
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+        <img src="assets/images/question.PNG" class="mh-100">
+        <p class="titre text-bold">Poser un question bien précise appartient à un axe</p>
+        <p class="text-bold"> Pour que l'analyse de digital maturité <br>
+            soit bien étudier : il faut choisir convenable   <br>
+            notre démarche des questions et récommandations.</p>
+    </div>
+
+    <div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">
+        <mat-card>
+            <div>
+                <div fxLayout="row" fxLayoutAlign="stretch">
+                    <form  [formGroup]="qstFormGroup">
+                        <mat-form-field>
+                            <mat-label>Question :</mat-label>
+                            <input matInput formControlName="contenu" id="question" required>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <mat-label>Pourcentage :</mat-label>
+                            <input matInput formControlName="pourcentage" id="pourcentage" required>
+                        </mat-form-field>
+
+                        <h4 style="margin-left: 23px;">Les axes :</h4>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Choisir un axe </mat-label>
+                            <mat-select formControlName="axe" required>
+                                <mat-option *ngFor="let axe of axes" [value]="axe" >
+                                    {{axe.nameAxe}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+
+                            <mat-form-field style="width: 475px;">
+                                <mat-label>nombre de reponses :</mat-label>
+                                <input matInput name="nb_reps" id="nb_reps" formControlName="nbrReponse" required>
+                            </mat-form-field>
+                          
+                    </form>
+                </div>
+
+                <div class="btn-center">
+            
+                    <button mat-raised-button color="primary" (click)="onUpdateQuestion()" >update </button>
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+
+</div>

@@ -31,8 +31,7 @@ export class AuthService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.get(AUTH_API + 'getuser',
-      httpOptions);
+    return this.http.get(AUTH_API + 'getuser', httpOptions);
   }
 
   register(username: string, email: string, password: string, role: string): Observable<any> {

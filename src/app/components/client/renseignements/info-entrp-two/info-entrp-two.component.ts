@@ -29,7 +29,7 @@ export class InfoEntrpTwoComponent implements OnInit {
     this.submitted = true;
     this.entrepriseService.saveEntreprise(this.entreprise).subscribe(date => {
       alert("succes save")
-      this.router.navigateByUrl("/infoentrptwo")
+      this.router.navigateByUrl("/axesevaluation")
     })
 
   }

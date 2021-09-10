@@ -1,9 +1,13 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 import { Recommandation } from "../models/recommandation.model";
 
+
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
+};
 
 @Injectable({providedIn:"root"})
 export class RecommandationService{
@@ -25,10 +29,15 @@ export class RecommandationService{
         return this.http.get<Recommandation>(host+ "/recommandation/"+id);
       }
      
-      DeleteRecommandation(recommandation: Recommandation):Observable<void>{
+      DeleteRecommandation(id:string){
         let host=environment.host;
-        return  this.http.delete<void>(host+ "/recommandation/"+ recommandation.id);
+        return  this.http.delete(host+ "/recommandation/"+id);
       }
+      updateRecommandation(recommandation:Recommandation):Observable<Recommandation>{
+        let host=environment.host;
+        return this.http.put<Recommandation>(host+"/recommandation/"+recommandation.id,recommandation);
+      }
+      
 
    
 }

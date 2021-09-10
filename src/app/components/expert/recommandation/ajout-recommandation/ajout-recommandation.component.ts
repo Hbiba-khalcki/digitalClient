@@ -34,8 +34,9 @@ ngOnInit(): void {
 
   this.recommandationFormGroup=this.fb.group({
     contenu:["",Validators.required],
-    pourcentage:["",Validators.required],
-    axe:["",Validators.required]
+    priorite:["",Validators.required],
+    axe:["",Validators.required],
+    reference:["",Validators.required]
 });
 }
 onSaveRecommandations(){
