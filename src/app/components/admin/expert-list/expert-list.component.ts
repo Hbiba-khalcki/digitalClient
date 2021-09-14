@@ -6,6 +6,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { ExpertService } from 'src/app/services/expert.service';
 import { Expert } from 'src/app/models/expert.model';
+import { environment } from 'src/environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -15,13 +17,15 @@ import { Expert } from 'src/app/models/expert.model';
 })
 export class ExpertListComponent implements OnInit , AfterViewInit{
 
-  public displayedColumns = ['username', 'email', 'details', 'update', 'delete'];
+  public displayedColumns = ['username', 'email', 'delete'];
   public dataSource = new MatTableDataSource<Expert>();
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private repoService: ExpertService, private router: Router) { }
+  constructor(private repoService: ExpertService,
+             private router: Router, 
+             private expertService:ExpertService) { }
 
   ngOnInit() {
     this.getAllExperts();
@@ -49,16 +53,15 @@ export class ExpertListComponent implements OnInit , AfterViewInit{
     this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
-  public redirectToDetails = (id: string) => {
-    let url: string = `/expert/details/${id}`;
-    this.router.navigate([url]);
+
+
+  ondeleteUser(id:string){
+    let host=environment.host;
+   this.expertService.delete(id).subscribe(data=>{
+     this.getAllExperts();
+   });
+   }
+
   }
 
-  public redirectToUpdate = (id: string) => {
-  }
-
-  public redirectToDelete = (id: string) => {
-  }
-
-}
 

@@ -27,7 +27,7 @@ export class ExpertService {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 
-  delete(id): Observable<any> {
+  delete(id:string|null):Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
