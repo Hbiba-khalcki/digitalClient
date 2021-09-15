@@ -1,19 +1,18 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { AxeService } from 'src/app/services/axe.service';
+import { ExpertService } from 'src/app/services/expert.service';
 
 @Component({
   selector: 'app-axes-evaluation',
   templateUrl: './axes-evaluation.component.html',
   styleUrls: ['./axes-evaluation.component.css'],
-
   host: {
-    'class': 'spinner-container'
+    class: 'spinner-container',
   },
   inputs: ['color', 'diameter', 'mode', 'strokeWidth', 'value'],
 })
-
-
 export class AxesEvaluationComponent implements OnInit {
   @Input() color: ThemePalette;
   @Input() diameter: number;
@@ -21,10 +20,26 @@ export class AxesEvaluationComponent implements OnInit {
   @Input() mode: ProgressSpinnerMode;
   @Input() strokeWidth: number;
   @Input() value: number;
-
-  constructor() { }
+  totals: any;
+  axes: any;
+  constructor(
+    private expertService: ExpertService,
+    private axeService: AxeService
+  ) {}
 
   ngOnInit(): void {
+    this.axeService.getAllAxes().subscribe((data) => {
+      this.axes = data;
+    });
+    this.expertService.getoverall().subscribe((res: any) => {
+      this.totals = res.totals;
+    });
   }
-
+  submit(){
+    console.log(this.totals)
+    console.log(this.axes)
+  }
+  round2decimals(a: any) {
+    return isNaN(a)?0:Math.round(a * 100) / 100;
+  }
 }

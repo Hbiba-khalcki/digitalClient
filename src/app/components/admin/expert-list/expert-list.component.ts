@@ -32,9 +32,11 @@ export class ExpertListComponent implements OnInit , AfterViewInit{
   }
 
   public getAllExperts = () => {
+    console.log(this.dataSource)
     this.repoService.getAll()
     .subscribe(res => {
-      this.dataSource.data = res as Expert[];
+      console.log(res)
+      this.dataSource.data = res.filter((elem:any)=>(elem.roles[0].name=="ROLE_EXPERT"));
     },
     (error) => {
     });
@@ -56,7 +58,6 @@ export class ExpertListComponent implements OnInit , AfterViewInit{
 
 
   ondeleteUser(id:string){
-    let host=environment.host;
    this.expertService.delete(id).subscribe(data=>{
      this.getAllExperts();
    });

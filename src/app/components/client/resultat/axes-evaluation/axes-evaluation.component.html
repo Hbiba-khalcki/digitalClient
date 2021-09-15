@@ -33,34 +33,14 @@
                             <mat-card>
                                 <div>Axe</div>
                                 <hr>
-                                <div fxLayout="row" fxLayoutAlign="space-around center">
-                                    <mat-label>Culture innovation </mat-label>
-                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                                    <mat-label>40%</mat-label>
-                                </div>
-                                <hr>
-                                <div fxLayout="row" fxLayoutAlign="space-around center">
-                                    <mat-label>Infrastructure informatique</mat-label>
-                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                                    <mat-label>40%</mat-label>
-                                </div>
-                                <hr>
-                                <div fxLayout="row" fxLayoutAlign="space-around center">
-                                    <mat-label>Operation precessus </mat-label>
-                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                                    <mat-label>40%</mat-label>
-                                </div>
-                                <hr>
-                                <div fxLayout="row" fxLayoutAlign="space-around center">
-                                    <mat-label>Stratergie leadership </mat-label>
-                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                                    <mat-label>40%</mat-label>
-                                </div>
-                                <hr>
-                                <div fxLayout="row" fxLayoutAlign="space-around center">
-                                    <mat-label>Technologies et service </mat-label>
-                                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-                                    <mat-label>40%</mat-label>
+                                <div *ngFor="let axe of axes">
+                                    <div fxLayout="row" *ngIf="totals[axe.id]" fxLayoutAlign="space-around center">
+                                        <mat-label>{{axe.nameAxe}}</mat-label>
+                                        <mat-progress-bar mode="determinate" value="{{round2decimals(totals[axe.id])}}">
+                                        </mat-progress-bar>
+                                        <mat-label>{{round2decimals(totals[axe.id])}}%</mat-label>
+                                    </div>
+                                    <hr *ngIf="totals[axe.id]">
                                 </div>
                             </mat-card>
                         </div>
@@ -72,11 +52,12 @@
                         <app-comparaison></app-comparaison>
                     </mat-tab>
                 </mat-tab-group>
-              
-              
+
+
 
                 <div class="btn-center">
-                    <button mat-button class="btn" routerLink="/resStr"> Suivant </button>
+                    <!-- routerLink="/resStr" -->
+                    <button mat-button class="btn" (click)="submit()"> Suivant </button>
                 </div>
             </mat-card>
         </div>

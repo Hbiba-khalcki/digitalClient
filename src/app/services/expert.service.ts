@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TokenStorageService } from './token-storage.service';
 
 const baseUrl = 'http://localhost:8080/api/users';
 
@@ -9,7 +10,8 @@ const baseUrl = 'http://localhost:8080/api/users';
 })
 export class ExpertService {
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) { }
 
   getAll(): Observable<any> {
     return this.http.get(baseUrl);
@@ -30,7 +32,15 @@ export class ExpertService {
   delete(id:string|null):Observable<any> {
     return this.http.delete(`${baseUrl}/${id}`);
   }
-
+  getoverall() {
+    const httpOptions = {
+        headers: new HttpHeaders({
+          Authorization: 'Bearer ' + this.tokenStorageService.getToken(),
+          'Content-Type': 'application/json'
+        })
+      };
+    return this.http.get(baseUrl+"/getoverall", httpOptions)
+  }
   deleteAll(): Observable<any> {
     return this.http.delete(baseUrl);
   }
