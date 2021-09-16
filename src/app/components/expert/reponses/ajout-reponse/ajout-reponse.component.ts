@@ -41,10 +41,24 @@ export class AjoutReponseComponent implements OnInit {
                   pourcentage: null,
                   qstId: params['id'],
                 };
+
+                // 3lech 3maltha l map ?? 
+                // bch les champs yet3abou b les données l msajlin
                 return r})
-              .map((x, i) => {
-                if (reponses[i]) return reponses[i];
-              })
+                .map((x, i) => {
+                  const r :Reponse ={
+                    contenu: '',
+                    pourcentage: null,
+                    qstId: params['id'],
+                  };
+                  return r;
+                });
+              const that = this
+              setTimeout(()=>{
+                reponses.map((x, i) => {
+                      that.reponses[i]=reponses[i]
+                });
+              },1000) 
           });
       });
     });

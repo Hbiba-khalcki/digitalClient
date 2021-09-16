@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { Router } from '@angular/router';
 import { AxeService } from 'src/app/services/axe.service';
 import { ExpertService } from 'src/app/services/expert.service';
 
@@ -24,7 +25,8 @@ export class AxesEvaluationComponent implements OnInit {
   axes: any;
   constructor(
     private expertService: ExpertService,
-    private axeService: AxeService
+    private axeService: AxeService, 
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -38,6 +40,7 @@ export class AxesEvaluationComponent implements OnInit {
   submit(){
     console.log(this.totals)
     console.log(this.axes)
+    this.router.navigateByUrl("/resStr")
   }
   round2decimals(a: any) {
     return isNaN(a)?0:Math.round(a * 100) / 100;

@@ -28,7 +28,7 @@ export class ReponseService{
     return  this.http.delete(host+ "/reponse/"+id);
   }
 
-    getReponsesByQuestionId(id:string):Observable<Reponse[]>{
+  getReponsesByQuestionId(id:string):Observable<Reponse[]>{
       let host = environment.host;
       return this.http.get<Reponse[]>(host + "/reponse/question/"+id);
     }

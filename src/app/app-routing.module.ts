@@ -54,7 +54,7 @@ import { AjoutRessourceComponent } from './components/expert/ressources/ajout-re
 import { ModifRessourceComponent } from './components/expert/ressources/modif-ressource/modif-ressource.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, canActivate: [ClientGuard]},
+  {path: '', component: HomeComponent},
   {path: 'typeorganisation', component: OrganisationTypeComponent, canActivate: [ClientGuard]},
   {path: 'infoclient', component: InfoClientComponent, canActivate: [ClientGuard]},
   {path: 'propos', component: AproposComponent },
