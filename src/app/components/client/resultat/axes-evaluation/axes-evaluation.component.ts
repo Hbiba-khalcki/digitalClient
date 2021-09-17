@@ -9,9 +9,7 @@ import { ExpertService } from 'src/app/services/expert.service';
   selector: 'app-axes-evaluation',
   templateUrl: './axes-evaluation.component.html',
   styleUrls: ['./axes-evaluation.component.css'],
-  host: {
-    class: 'spinner-container',
-  },
+  host: { class: 'spinner-container', },
   inputs: ['color', 'diameter', 'mode', 'strokeWidth', 'value'],
 })
 export class AxesEvaluationComponent implements OnInit {
@@ -38,8 +36,6 @@ export class AxesEvaluationComponent implements OnInit {
     });
   }
   submit(){
-    console.log(this.totals)
-    console.log(this.axes)
     this.router.navigateByUrl("/resStr")
   }
   round2decimals(a: any) {

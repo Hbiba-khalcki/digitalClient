@@ -1,15 +1,45 @@
-<div fxLayout="column" fxLayoutAlign="space-around start" class="evolution">
+<div *ngIf="category===1" fxLayout="column" fxLayoutAlign="space-around start" class="evolution">
     <mat-card>
         <strong> Votre entreprise est : </strong>
-        <strong style="color: palevioletred;">Traditionaliste</strong>
+        <strong style="color: palevioletred;">Beginners</strong>        
         <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
-        <p>Les entreprises traditionalistes semblent négliger l'importance de <br>
-            la transformation numérique dans tous les domaines de leur activité. <br>
-            Toutes les dimensions de la transformation ne sont pas exploitées <br>
-            et parfois ignorées. La bonne nouvelle en complétant cette évaluation <br>
-            aujourd'hui est que vous venez de franchir votre premier véritable pas <br>
-            vers la pérennité de votre entreprise. Il serait important pour vous de <br>
-            revoir vos priorités et de construire une base solide pour aspirer à une <br>
-            meilleure maturité numérique. </p>
+        <p>Les équipes management sceptiques à la valeur business d’une <br>
+            utilisation du digital, mettent en place quelques expérimentations <br>
+            numériques et la culture digitale immature.. </p>
     </mat-card>
+</div>
+
+<div *ngIf="category===2" fxLayout="column" fxLayoutAlign="space-around start" class="evolution">
+    <mat-card>
+        <strong> Votre entreprise est : </strong>
+        <strong style="color: palevioletred;">Fashionistas</strong>
+        <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+        <p>Nombreuses utilisations du digital (innovations, social, mobile) mais en <br>
+            silos, absence de vision cible, coordination et organisation sous- <br>
+            développée et la culture digitale existante mais non-diffuse. </p>
+    </mat-card>
+</div>
+
+<div *ngIf="category===3" fxLayout="column" fxLayoutAlign="space-around start" class="evolution">
+    <mat-card>
+        <strong> Votre entreprise est : </strong>
+        <strong style="color: palevioletred;">Conservators</strong>
+        <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+        <p>La vision cible existante mais sous développée, quelques usages <br>
+            avancés du digital, et utilisations maîtrisées des fonctions de base du <br>
+            digital. Et en fin, la gouvernance digitale par silos</p>
+    </mat-card>
+</div>
+<div *ngIf="category===4" fxLayout="column" fxLayoutAlign="space-around start" class="evolution">
+    <mat-card>
+        <strong> Votre entreprise est : </strong>
+        <strong style="color: palevioletred;">Digirati</strong>
+        <mat-progress-bar mode="determinate" value="20"></mat-progress-bar>
+        <p>Bonne vision cible, la gouvernance digitale centralisée, les nombreuses <br>
+            initiatives digitales, mesurables, et générant des revenus. Et en fin, la <br> 
+            forte culture digitale</p>
+    </mat-card>
+
+
+  
 </div>
