@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EntrepriseService } from 'src/app/services/entreprise.service';
 import { SharedEntrepriseService } from 'src/app/services/sharedEntreprise.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-info-entrp',
@@ -20,6 +21,7 @@ export class InfoEntrpComponent implements OnInit {
 
   constructor(private router: Router,
     private entrepriseService: EntrepriseService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -30,9 +32,12 @@ export class InfoEntrpComponent implements OnInit {
   onSaveEntreprise() {
     this.submitted = true;
     this.entrepriseService.saveEntreprise(this.entreprise).subscribe(date => {
-      alert("succes save")
+     
       this.router.navigateByUrl("/infoentrptwo")
     })
 
+  }
+  onBack() {
+    this.location.back();
   }
 }

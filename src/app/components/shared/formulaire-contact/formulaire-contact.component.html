@@ -1,5 +1,5 @@
-<div>
-    <mat-card class="card">
+<div fxLayout="row wrap">
+    <mat-card class="card w-100">
 
         <div fxLayout="colum" fxLayoutAlign=" none">
             <mat-icon class="aucun">mail_outline</mat-icon> 
@@ -8,8 +8,7 @@
 
         <form class="form" [formGroup]="contactFormGroup">
             <div fxLayout="row" fxLayoutAlign="stretch">
- 
-                    <mat-form-field appearance="outline">
+                    <mat-form-field class="w-100" appearance="outline">
                         <br>
                         <mat-label class="my-label">Subject :</mat-label>
                         <br>
@@ -23,7 +22,7 @@
         
             <div fxLayout="row" fxLayoutAlign="stretch">
                           
-                    <mat-form-field appearance="outline">
+                    <mat-form-field class="w-100" appearance="outline">
                         <br>
                         <mat-label class="my-label">email :</mat-label>
                         <br>
@@ -34,16 +33,18 @@
                     </mat-form-field>   
 
              </div> <br>
-         
-                <mat-form-field appearance="outline" class="Mat-Msg">
+             <div fxLayout="row" fxLayoutAlign="stretch">
+                 
+                <mat-form-field class="w-100" appearance="outline">
                     <br>
                     <mat-label class="my-label">Votre demande :</mat-label>
                     <br>
-                    <div div fxLayout="row" fxLayoutAlign="space-between none">
-                        <input matInput placeholder="message" name="msg" required formControlName="message" >
+                    <div fxLayout="row" fxLayoutAlign="space-between none">
+                        <input matInput placeholder="message" name="message" required formControlName="message" >
                         <mat-icon> chat_bubble_outline</mat-icon>
                     </div>
-                </mat-form-field>  <br><br>
+                </mat-form-field>
+             </div> <br><br>
                
 
             <button class="my-button" mat-raised-button color="primary" (click)="sendmsg()" >Envoyer</button>

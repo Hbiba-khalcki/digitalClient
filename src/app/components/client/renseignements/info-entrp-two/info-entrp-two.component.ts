@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EntrepriseService } from 'src/app/services/entreprise.service';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-info-entrp-two',
@@ -19,6 +20,7 @@ export class InfoEntrpTwoComponent implements OnInit {
   submitted: boolean = false;
   constructor(private router: Router,
     private entrepriseService: EntrepriseService,
+    private location: Location
   ) { }
   ngOnInit(): void {
     this.entrepriseService.getEntreprise().subscribe((data: any) => {
@@ -28,10 +30,13 @@ export class InfoEntrpTwoComponent implements OnInit {
   onSaveEntreprise() {
     this.submitted = true;
     this.entrepriseService.saveEntreprise(this.entreprise).subscribe(date => {
-      alert("succes save")
       this.router.navigateByUrl("/axesevaluation")
     })
 
+  }
+  
+  onBack() {
+    this.location.back();
   }
 
 }

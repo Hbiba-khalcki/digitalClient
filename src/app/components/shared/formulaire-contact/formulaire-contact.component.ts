@@ -27,6 +27,7 @@ export class FormulaireContactComponent implements OnInit {
     });
   }
   sendmsg(){
+    
     this.submitted = true;
     if (this.contactFormGroup?.invalid) return;
     this.contactService.sendemail(this.contactFormGroup?.value).subscribe(res=>{

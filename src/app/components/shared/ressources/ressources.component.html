@@ -3,7 +3,7 @@
     <mat-toolbar>
         <span>Stratégie et Leadership</span>
     </mat-toolbar>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between none">
         <div *ngFor="let number of [0,1,2]">
             <div *ngFor="let ressource of ressources">
                 <div *ngIf="ressource.axe.nameAxe === 'strategie leadership' ">
@@ -24,7 +24,7 @@
     <mat-toolbar>
         <span>Technologies et services</span>
     </mat-toolbar>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between none">
         <div *ngFor="let number of [0,1,2]">
             <div *ngFor="let ressource of ressources">
                 <div *ngIf="ressource.axe.nameAxe === 'technologie service' ">
@@ -45,7 +45,7 @@
     <mat-toolbar>
         <span>Culture et Innovation</span>
     </mat-toolbar>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between none">
         <div *ngFor="let number of [0,1,2]">
             <div *ngFor="let ressource of ressources">
                 <div *ngIf="ressource.axe.nameAxe === 'culture innovation' ">
@@ -64,7 +64,7 @@
     <mat-toolbar>
         <span>Opérations et processus</span>
     </mat-toolbar>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between none">
         <div *ngFor="let number of [0,1,2]">
             <div *ngFor="let ressource of ressources">
                 <div *ngIf="ressource.axe.nameAxe === 'operation processus' ">
@@ -83,8 +83,8 @@
     <mat-toolbar>
         <span>Infrastructure informatique et données</span>
     </mat-toolbar>
-    <div fxLayout="row" fxLayoutAlign="space-between none">
-        <div *ngFor="let number of [0,1,2]">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between none">
+        <div fxFlex.gt-sm="40%" *ngFor="let number of [0,1,2]">
             <div *ngFor="let ressource of ressources">
                 <div *ngIf="ressource.axe.nameAxe === 'infrastructure informatique' ">
                     <div class="container">

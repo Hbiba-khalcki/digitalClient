@@ -91,13 +91,14 @@
             </div>
 
             <div class="btn-center" fxLayout="row">
-                <div fxFlex.lt-md="20%">
-                    <button mat-button class="btn-gray" routerLink="/" disabled> Précédent </button>
+                <div fxFlex="50%">
+                    <button mat-button  class="btn-gray" (click)="onBack()"> Précédent </button>
                 </div>
-
-                <button mat-fab color="'primary'">
-                    <mat-icon (click)="onSaveEntreprise()">trending_flat</mat-icon>
-                </button>
+                <div fxFlex="50%">
+                    <button mat-fab color="'primary'" >
+                        <mat-icon  (click)="onSaveEntreprise()">trending_flat</mat-icon>
+                    </button>
+                </div>
             </div>
         </mat-card>
     </div>

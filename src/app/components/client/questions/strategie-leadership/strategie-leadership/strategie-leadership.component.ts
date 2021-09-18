@@ -53,21 +53,33 @@ export class StrategieLeadershipComponent implements OnInit {
           switch (this.axe) {
             case 'strategie leadership':
               this.topic_img = './assets/images/Quest/quest1.png';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
-            case 'technologies services':
+            case 'technologies et services':
               this.topic_img = './assets/images/Quest/quest2.PNG';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
-            case 'operation processus':
+            case 'opérations et processus':
               this.topic_img = './assets/images/Quest/quest3.PNG';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
             case 'infrastructure informatique':
               this.topic_img = './assets/images/Quest/quest4.PNG';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
             case 'culture informatique':
               this.topic_img = './assets/images/Quest/quest5.PNG';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
             default:
               this.topic_img = './assets/images/Quest/quest5.PNG';
+              console.log(this.topic_img)
+              console.log(this.axe)
               break;
           }
         }

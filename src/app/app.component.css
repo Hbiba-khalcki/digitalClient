@@ -2,3 +2,18 @@
     position: relative;
     top: 60px;
 }
+::ng-deep .mat-form-field{
+    max-width: 99% !important;
+}
+::ng-deep .w-100{
+    width: 100%;
+}
+::ng-deep .question-content{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 10px;
+    font-style: italic;
+}

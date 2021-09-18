@@ -1,5 +1,5 @@
-<div fxLayout="row wrap axe-{{axecount}}">
-    <div fxFlex.gt-sm="40%" fxFlex.lt-md="100%" class="col-padding text-center ">
+<div fxLayout="row wrap" class="axe-{{axecount}}">
+    <div fxFlex.gt-sm="40%" class="col-padding text-center ">
         <img src="{{topic_img}}"  class="mh-100" alt="">
         <p class="titre text-bold"> Etape {{this.axecount}} / 5 </p>
         <p class="titre text-bold"> {{this.axe}}  </p>
@@ -12,33 +12,33 @@
         </p>
     </div>
 
-<div fxFlex.gt-sm="60%" fxFlex.lt-md="100%" class="col-padding">     
-    <mat-card>
-        <div fxLayout="row" class="partOne">
-        
-                <div class="axe-{{axecount}} numQst" fxFlex.lt-md="20%"><span class="num">{{order}}</span></div>
-                <div fxFlex.lt-md="80%" class="qst"> {{question.contenu}}</div>
+    <div fxFlex.gt-sm="60%" class="col-padding">     
+        <mat-card>
+            <div fxLayout="row" class="partOne">
+            
+                    <div class="axe-{{axecount}} numQst" fxFlex.lt-md="20%"><span class="num">{{order}}</span></div>
+                    <div fxFlex.lt-md="80%" class="qst question-content"> {{question.contenu}}</div>
 
-        </div>
-        <div >
-            <mat-card class="rep"> 
-                <div  fxLayout="row">
-                    <div fxFlex.lt-md="20%" >
-                        <mat-radio-group  [(ngModel)]="clientreponse.idReponse">
-                            <mat-radio-button class="axe-{{axecount}} mat-radio-button" *ngFor="let reponse of reponses" [value]="reponse.id" >{{reponse.contenu}} </mat-radio-button>
-                        </mat-radio-group> 
+            </div>
+            <div >
+                <mat-card class="rep"> 
+                    <div  fxLayout="row">
+                        <div fxFlex.lt-md="20%" >
+                            <mat-radio-group  [(ngModel)]="clientreponse.idReponse">
+                                <mat-radio-button class="axe-{{axecount}} mat-radio-button w-100" *ngFor="let reponse of reponses" [value]="reponse.id" >{{reponse.contenu}} </mat-radio-button>
+                            </mat-radio-group> 
+                        </div>
+                    
                     </div>
-                   
-                </div>
-            </mat-card>     
-        </div>
-        <div class="progbar"> 
-            <mat-progress-bar class="axe-{{axecount}}" mode="determinate" value="{{100*order/total}}"></mat-progress-bar>
-        </div>
-        <div class="btn-center">
-             <button mat-button class="btn-gray" (click)="onBack()"> Précédent </button>
-             <button mat-raised-button class="btn axe-{{axecount}}" (click)="onSubmit()"> Suivant </button>
-        </div>
-    </mat-card>
-</div>
+                </mat-card>     
+            </div>
+            <div class="progbar"> 
+                <mat-progress-bar class="axe-{{axecount}}" mode="determinate" value="{{100*order/total}}"></mat-progress-bar>
+            </div>
+            <div class="btn-center">
+                <button mat-button class="btn-gray" (click)="onBack()"> Précédent </button>
+                <button mat-raised-button class="btn axe-{{axecount}}" (click)="onSubmit()"> Suivant </button>
+            </div>
+        </mat-card>
+    </div>
 </div>
