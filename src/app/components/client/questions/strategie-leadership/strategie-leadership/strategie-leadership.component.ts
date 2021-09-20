@@ -28,6 +28,7 @@ export class StrategieLeadershipComponent implements OnInit {
     idReponse: '',
   };
   topic_img = './assets/images/Quest/quest5.PNG';
+  axes:any[]
   constructor(
     private qstService: QuestionService,
     private axeService: AxeService,
@@ -46,10 +47,13 @@ export class StrategieLeadershipComponent implements OnInit {
         // order = numero de question 
         this.order = parseInt(params['order']);
         this.question = data[parseInt(params['order']) - 1];
+        this.axeService.getAllAxes().subscribe((data:any)=>{
+          this.axes = data;
+        })
         if (this.question.axe) {
           this.axe = this.question.axe.nameAxe.toLowerCase();
           // get deg dimp d'axe
-          this.axecount = this.question.axe.degreImportance;
+          this.axecount = this.axes.findIndex((axe)=>(this.question.axe.id == axe.id));
           switch (this.axe) {
             case 'strategie leadership':
               this.topic_img = './assets/images/Quest/quest1.png';
